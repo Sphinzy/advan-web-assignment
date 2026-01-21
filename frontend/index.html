@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/bootstrap-5.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+
+    <!-- Icons  -->
+    <link rel="stylesheet" href="assets/icons/bootstrap-icons.css">
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="assets/fonts/KantumruyPro-Bold.ttf">
+    <link rel="stylesheet" href="assets/fonts/KantumruyPro-Regular.ttf">
+    <link rel="stylesheet" href="assets/fonts/Poppins-Bold.ttf">
+    <link rel="stylesheet" href="assets/fonts/Poppins-Regular.ttf">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+</head>
+<style>
+    .skill {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .skill:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        transform: translateY(-0.125rem);
+    }
+
+    .progress-bar {
+        background-color: var(--bs-main) !important;
+    }
+
+    .program:hover {
+        transform: translateY(-8px);
+    }
+
+    .program-1 {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .program-1:hover {
+        transform: translateX(18px);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: var(--swiper-navigation-top-offset, 88%) !important;
+        color: #ccc !important;
+    }
+
+    body[data-bs-theme="dark"] .swiper-button-next,
+    .swiper-button-prev {
+        top: var(--swiper-navigation-top-offset, 88%) !important;
+        color: #ccc !important;
+    }
+
+</style>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="sticky-top " style="z-index: 5;">
+        <nav class="navbar fixed-top bg-secondary-subtle">
+            <div class="container">
+                <div>
+                    <img src="../../img/logo-team.png" id="logoImage" alt="">
+                    <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                </div>
+    
+                <!-- menu icon  -->
+                <button class="navbar-toggler d-flex d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- side bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <img src="../../img/logo-team.png" id="logoImage" alt="">
+                            <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item ps-3 rounded-2">
+                                <a href="../index.html" class="nav-link active"><i class="bi bi-house-door-fill pe-1"></i>Home</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="pages/jobs.html" class="nav-link text-main"><i
+                                        class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="pages/blog.html" class="nav-link text-main"><i
+                                        class="bi bi-newspaper pe-1"></i>Blog</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="pages/about.html" class="nav-link text-main"><i
+                                        class="bi bi-info-circle-fill pe-1"></i>About</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="pages/contact.html" class="nav-link text-main"><i
+                                        class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                            </li>
+                        </ul>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+    
+                <!-- input search  -->
+                <div class="d-none d-lg-flex" style="width: 500px;">
+                    <ul class="navbar-nav d-flex flex-row justify-content-evenly w-100">
+                        <li class="nav-item ps-3 rounded-2">
+                            <a href="./index.html" class="nav-link active"><i class="bi bi-house-door-fill pe-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="pages/jobs.html" class="nav-link text-main"><i
+                                    class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="pages/blog.html" class="nav-link text-main"><i class="bi bi-newspaper pe-1"></i>Blog</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="pages/about.html" class="nav-link text-main"><i
+                                    class="bi bi-info-circle-fill pe-1"></i>About</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="pages/contact.html" class="nav-link text-main"><i
+                                    class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="dropdown d-none d-lg-flex">
+                    <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div style="border: 2px solid var(--bs-main); border-radius: 50%; ">
+                            <img src="../assets/images/profile.png" class="img-fluid rounded-circle object-fit-cover"
+                                id="profile-image" style="width: 40px; height: 40px;" alt />
+                        </div>
+                    </a>
+    
+                    <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                        <li><a class='dropdown-item' href='../pages/profile.html'><i
+                                    class="bi bi-person-circle me-2"></i>Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                    class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-body">
+                    <h3 class="text-danger">Logout</h3>
+                    <p>Are you sure you want to logout?</p>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-main" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" id="btnLogout">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<main>
+    <section class="mt-15">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="pb-3 clamp-3 fw-bold text-dark">Discover Your Future: Choose the Field of Study That Fits You</h1>
+                    <p class="pb-2 clamp-2 text-secondary">Don’t worry! We help you explore your interests, skills, and in-demand
+                        career opportunities to build a bright future.</p>
+                    <div class="d-flex justify-content-between align-items-center text-center pb-5">
+                        <div class="mb-4 mb-md-0">
+                            <div class="d-flex flex-column align-items-center text-dark ">
+                                <span class="display-5 fw-bolder counter" data-countto="2837"
+                                    data-duration="2000">0</span>
+                                <span class="fw-bold">Jobs</span>
+                            </div>
+                        </div>
+                        <div class="mb-4 mb-md-0">
+                            <div class="d-flex flex-column align-items-center text-dark">
+                                <span class="display-5 fw-bolder counter" data-countto="8790"
+                                    data-duration="2000">0</span>
+                                <span class="fw-bold">Skills</span>
+                            </div>
+                        </div>
+                        <div class="mb-4 mb-md-0">
+                            <div class="d-flex flex-column align-items-center text-dark">
+                                <span class="display-5 fw-bolder counter" data-countto="5261"
+                                    data-duration="2000">0</span>
+                                <span class="fw-bold">Scholarships</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class='btn btn-main' href='#'>Get Started Now</a>
+                </div>
+                <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://img.freepik.com/premium-vector/search-job-find-vacancy-employment-go-career-people-seek-vacancy-search-new-work-internet_352905-871.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="Education" class="img-fluid shadow-sm rounded-3 position-relative">
+                    <div class="card-img-overlay"></div>
+                    <div class="image-overlay">
+                        <div class="badge position-absolute bg-main p-3 rounded-pill shadow-sm"
+                            style="top: 470px; right: 200px;">
+                            <i class="bi bi-patch-check-fill fs-6 px-1"></i>
+                            <span class="fs-5">Strive for Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-15">
+        <div class="" data-aos="fade-up" data-aos-delay="300">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme card-hover">
+                            <div class="card-body d-flex">
+                                <div class="fs-2">
+                                    <i class="bi bi-book-fill ps-1 pe-2 text-primary-emphasis"></i>
+                                </div>
+                                <div>
+                                    <h5 class="pt-3 clamp-1">Multi-disciplinary Skills</h5>
+                                    <p class="clamp-2">Information Technology, Digital Marketing, Engineering,
+                                        Communication & Foreign Languages, Digital Arts & Design.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme card-hover">
+                            <div class="card-body d-flex">
+                                <div class="fs-2">
+                                    <i class="bi bi-laptop-fill ps-1 pe-2 text-primary-emphasis"></i>
+                                </div>
+                                <div>
+                                    <h5 class="pt-3 clamp-1">Many Job Opportunities</h5>
+                                    <p class="clamp-2">Various career opportunities in Cambodia, including internships,
+                                        government, and private sectors.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme card-hover">
+                            <div class="card-body d-flex">
+                                <div class="fs-2">
+                                    <i class="bi bi-people-fill ps-1 pe-2 text-primary-emphasis"></i>
+                                </div>
+                                <div>
+                                    <h5 class="pt-3 clamp-1">Success Stories</h5>
+                                    <p class="clamp-2">Many students have successfully built their careers and easily
+                                        found jobs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mt-15">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class=" mb-5 mb-lg-0 border-0">
+                        <div class="card-body">
+                            <h3 class="mb-4 clamp-1 fw-bold text-dark">Popular Skills</h3>
+                            <p class="mb-6 clamp-4 text-secondary">
+                                Currently and in the near future, Cambodia’s job market demands high-level skills,
+                                including technical and soft skills. Technological growth and industry development
+                                increase the need for highly capable individuals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+                    <div class="row gy-3">
+                        <!-- Skill Item -->
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Project Management</h6>
+                                    <span class="fw-bold">95%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="95"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Strategy planning and implementation</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Web Development</h6>
+                                    <span class="fw-bold">88%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="88"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Planning and modern technologies</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Data Analysis</h6>
+                                    <span class="fw-bold">82%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="82"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Business intelligence and insights</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Digital Marketing</h6>
+                                    <span class="fw-bold">78%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="78"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Managing multi-platform campaigns</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Quality Assurance</h6>
+                                    <span class="fw-bold">92%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="92"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Comprehensive testing procedures</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">Client Relations</h6>
+                                    <span class="fw-bold">96%</span>
+                                </div>
+                                <div class="progress rounded-full overflow-hidden mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="96"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="text-sm clamp-1">Building long-term partnerships</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="mt-19 mb-22">
+        <div class="container">
+            <div class="text-center pb-12">
+                <h3 class="fs-3 text-center pb-3 fw-bold text-dark">Student Feedback</h3>
+                <p class="fs-5 clamp-2 text-secondary">
+                    FYC helps students throughout their learning journey by guiding them on skills and career paths that
+                    match their talents and the job market, including information about scholarships locally and
+                    internationally.
+                </p>
+            </div>
+            <div class="row gy-5">
+                <div class="col-lg-9">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme card-hover rounded-4 p-4">
+                                <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                    style="font-size:5rem; line-height:1; opacity:0.2;">"</div>
+                                <div class="stars text-warning mt-4 mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="mb-4 fst-italic clamp-4">"I gained many lessons and knowledge through feedback
+                                    to choose the field of study that truly fits me."</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme card-hover rounded-4 p-4">
+                                <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                    style="font-size:5rem; line-height:1; opacity:0.2;">"</div>
+                                <div class="stars text-warning mt-4 mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p class="mb-4 fst-italic clamp-5">"This platform helped guide me on high-potential
+                                    skills and career opportunities, making it easy to decide which field to study
+                                    further."</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme card-hover rounded-4 p-4">
+                                <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                    style="font-size:5rem; line-height:1; opacity:0.2;">"</div>
+                                <div class="stars text-warning mt-4 mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="mb-4 fst-italic clamp-4">"I received a lot of scholarship information both
+                                    locally and internationally, and I could easily find many job opportunities."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overall Rating -->
+                <div class="col-lg-3">
+                    <div class="text-center">
+                        <div
+                            class="card shadow-sm bg-white bg-card-theme card-hover border-0 rounded-4 p-4 d-inline-block">
+                            <div class="rating-number fw-bold text-dark display-5 bg-card-theme">4.8</div>
+                            <div class="rating-stars text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="mb-3 fs-5 clamp-1">Based on 230+ reviews</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-3 pb-3">
+                                <span class="fw-bold">User-Friendly</span>
+                                <span class="fw-bold clamp-1">Easy & Time-Saving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-main text-white py-4 w-100" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-4 mb-3">
+                <a class="navbar-brand" href="#">
+                    <img src="../assets/images/profile.png" alt="Logo" style="width: 75px" />
+                </a>
+                <p class="mt-2">
+                    This platform provides career guidance, job information, scholarships, and opportunities
+                    for Cambodian youth to make informed decisions about their future.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/asset/page/us/about" class="text-white text-decoration-none">About Us</a></li>
+                    <li><a href="/asset/page/us/contact" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a href="/asset/page/direction/major" class="text-white text-decoration-none">Career
+                            Guidance</a></li>
+                    <li><a href="/asset/page/us/event" class="text-white text-decoration-none">Events</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-4 mb-3">
+                <h5>Contact</h5>
+                <p>Email: <a href="mailto:foryouthcambodia@gmail.com" class="text-white">foryouthcambodia@gmail.com</a>
+                </p>
+                <p>Phone: <a href="tel:+11234567890" class="text-white">(+885) 456 7890</a></p>
+            </div>
+        </div>
+
+        <hr class="bg-light" />
+        <div class="text-center">
+            &copy; 2025 FYC. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <script src="assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+                const counters = document.querySelectorAll(".counter");
+
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute("data-countto"); // final number
+                    const duration = +counter.getAttribute("data-duration") || 500; // total duration in ms
+                    const step = +counter.getAttribute("data-step") || 100; // increment per step
+
+                    let current = 0;
+                    const intervalTime = Math.ceil(duration / (target / step));
+
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = current;
+                        }
+                    }, intervalTime);
+                });
+            });
+            document.addEventListener("DOMContentLoaded", () => {
+                    const progressBars = document.querySelectorAll(".progress-bar");
+
+                    progressBars.forEach(bar => {
+                        const target = +bar.getAttribute("aria-valuenow");
+                        let width = 0;
+                        const stepTime = 20; // ms per step
+                        const increment = target / (400 / stepTime); // animate in ~1s
+
+                        const timer = setInterval(() => {
+                            width += increment;
+                            if (width >= target) {
+                                width = target;
+                                clearInterval(timer);
+                            }
+                            bar.style.width = width + "%";
+                            bar.classList.add("bg-primary"); // add color class if needed
+                        }, stepTime);
+                    });
+                });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile with Update/Delete</title>
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="container my-4">
+            <div class="row">
+                <!-- PROFILE INFO -->
+                <div class="col-12 mb-4">
+                    <div class="card bg-card-theme shadow p-3 text-center">
+                        <img id="profile-avatar" src="../../image/project-logo/profile-img.jpg"
+                            style="width: 100px; height: 100px; border-radius: 50%;" alt="">
+                        <h4 id="profile-name" class="mt-2">Name</h4>
+                        <h6><span>@</span><span id="profile-username">username</span></h6>
+                        <p id="profile-bio">Bio</p>
+                    </div>
+                </div>
+
+                <!-- TABS -->
+                <div class="col-12">
+                    <ul class="nav nav-pills mb-3 gap-3 flex-nowrap overflow-x-scroll" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="pills-jobs-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-jobs">Job Posts</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="pills-blogs-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-blogs">Blog Posts</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- JOBS -->
+                        <div class="tab-pane fade show active" id="pills-jobs">
+                            <div class="row g-3" id="jobs-container"></div>
+                        </div>
+
+                        <!-- BLOGS -->
+                        <div class="tab-pane fade" id="pills-blogs">
+                            <div class="row g-3" id="blogs-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- UPDATE MODAL -->
+    <div class="modal fade" id="updateModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="update-type">
+                    <input type="hidden" id="update-id">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="update-title" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" id="update-image" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Content/Description</label>
+                        <textarea id="update-content" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="save-update-btn" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const baseUrl = 'http://localhost:3000';
+            const userId = 9; // logged-in user
+            const token = 'YOUR_TOKEN_HERE'; // add token if API needs auth
+
+            const avatar = document.getElementById('profile-avatar');
+            const nameEl = document.getElementById('profile-name');
+            const usernameEl = document.getElementById('profile-username');
+            const bioEl = document.getElementById('profile-bio');
+            const jobsContainer = document.getElementById('jobs-container');
+            const blogsContainer = document.getElementById('blogs-container');
+
+            const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
+            const updateType = document.getElementById('update-type');
+            const updateId = document.getElementById('update-id');
+            const updateTitle = document.getElementById('update-title');
+            const updateImage = document.getElementById('update-image');
+            const updateContent = document.getElementById('update-content');
+            const saveUpdateBtn = document.getElementById('save-update-btn');
+
+            // Render function
+            async function render() {
+                try {
+                    // User info
+                    const userRes = await fetch(`${baseUrl}/api/users/${userId}`);
+                    const user = (await userRes.json()).data;
+                    avatar.src = user.avatar || '../../image/project-logo/profile-img.jpg';
+                    nameEl.textContent = `${user.firstName} ${user.lastName}`;
+                    usernameEl.textContent = user.email.split('@')[0];
+                    bioEl.textContent = `Registered at: ${new Date(user.registeredAt).toLocaleDateString()}`;
+
+                    // Jobs
+                    const jobsRes = await fetch(`${baseUrl}/api/jobs`);
+                    const userJobs = (await jobsRes.json()).data.filter(j => j.authorId === userId);
+                    jobsContainer.innerHTML = userJobs.length
+                        ? userJobs.map(job => `
+                    <div class="col-6">
+                        <div class="card shadow-sm bg-card-theme border-0 rounded-3">
+                            <img src="${job.image}" class="card-img-top object-fit-cover" style="height:200px;">
+                            <div class="card-footer d-flex justify-content-between">
+                                <h6>${job.title}</h6>
+                                <div>
+                                    <button class="btn btn-sm btn-warning me-1" onclick="openUpdateModal('jobs', ${job.id}, '${job.title}', '${job.image}', '${job.description}')">Update</button>
+                                    <button class="btn btn-sm btn-danger" onclick="deletePost('jobs', ${job.id})">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')
+                        : `<p class="text-center text-muted">No job posts yet</p>`;
+
+                    // Blogs
+                    const blogsRes = await fetch(`${baseUrl}/api/posts`);
+                    const userBlogs = (await blogsRes.json()).data.filter(p => p.authorId === userId);
+                    blogsContainer.innerHTML = userBlogs.length
+                        ? userBlogs.map(post => `
+                    <div class="col-6">
+                        <div class="card shadow-sm bg-card-theme border-0 rounded-3">
+                            <img src="${post.image}" class="card-img-top object-fit-cover" style="height:200px;">
+                            <div class="card-footer d-flex justify-content-between">
+                                <h6>${post.title}</h6>
+                                <div>
+                                    <button class="btn btn-sm btn-warning me-1" onclick="openUpdateModal('posts', ${post.id}, '${post.title}', '${post.image}', '${post.content}')">Update</button>
+                                    <button class="btn btn-sm btn-danger" onclick="deletePost('posts', ${post.id})">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')
+                        : `<p class="text-center text-muted">No blog posts yet</p>`;
+
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            // DELETE
+            window.deletePost = async function (type, id) {
+                if (!confirm(`Delete this ${type}?`)) return;
+                try {
+                    const res = await fetch(`${baseUrl}/api/${type}/${id}`, { method: 'DELETE' });
+                    if (!res.ok) throw new Error('Failed to delete');
+                    alert('Deleted successfully');
+                    render();
+                } catch (err) {
+                    alert('Error deleting ' + type);
+                }
+            };
+
+            // OPEN UPDATE MODAL
+            window.openUpdateModal = function (type, id, title, image, content) {
+                updateType.value = type;
+                updateId.value = id;
+                updateTitle.value = title;
+                updateImage.value = image;
+                updateContent.value = content;
+                updateModal.show();
+            };
+
+            // SAVE UPDATE
+            saveUpdateBtn.addEventListener('click', async () => {
+                const type = updateType.value;
+                const id = updateId.value;
+                const updatedData = {
+                    title: updateTitle.value,
+                    image: updateImage.value,
+                    description: updateContent.value,
+                    content: updateContent.value
+                };
+
+                try {
+                    const res = await fetch(`${baseUrl}/api/${type}/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + token
+                        },
+                        body: JSON.stringify(updatedData)
+                    });
+                    if (!res.ok) throw new Error('Update failed');
+                    alert('Updated successfully');
+                    updateModal.hide();
+                    render();
+                } catch (err) {
+                    alert('Error updating ' + type);
+                }
+            });
+
+            // Initial render
+            render();
+        });
+    </script>
+
+    <script src="../assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

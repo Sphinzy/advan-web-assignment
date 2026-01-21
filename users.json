@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyssaasdasds001@gmail.com",
+    "password": "$2b$10$SH.RHbWPMLUYYYmQ8SwfnuCNs9lhNcrr4Q8H7FHnuu2FhRrexX3G.",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-15T16:25:54.293Z"
+  },
+  {
+    "id": 2,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyssas001@gmail.com",
+    "password": "$2b$10$o6fLAUTlr88yQZNyfuRkquRuvaXfcA4QbDWlYRapuN/0.ZO81lZqW",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-15T16:25:59.590Z"
+  },
+  {
+    "id": 3,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyas001@gmail.com",
+    "password": "$2b$10$XW3zPL7otiTGXkFBouLfK.zqgip6qSbRJy0AgHw.lWfkA2gZvpdly",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-15T16:26:03.024Z"
+  },
+  {
+    "id": 4,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyas0sa01@gmail.com",
+    "password": "$2b$10$CDgPxA9s1iU8qLF116OGluHAtMKAubDsAceKAoDcU45mvJZbAqePi",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-15T16:28:02.600Z"
+  },
+  {
+    "id": 5,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyas0sssa01@gmail.com",
+    "password": "$2b$10$KyoOSEUZm1yhro7M3yKJPuKrsxOYfF7vjilHzjI5qQOfpAx6AIPFm",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-15T17:13:43.898Z"
+  },
+  {
+    "id": 6,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyas0ssssa01@gmail.com",
+    "password": "$2b$10$c1NsQrz3UXcueeMjYah5qOj.vjklKzAMbZMurqOWomogxFI9UNnfW",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-16T07:16:55.972Z"
+  },
+  {
+    "id": 7,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsya001@gmail.com",
+    "password": "$2b$10$1YQwEN.Aij0/fzFIMhQ/JeH2ERecaOLpeQ69QHrepgC2FzKe0r3nm",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-16T15:20:26.690Z"
+  },
+  {
+    "id": 8,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsya0sd01@gmail.com",
+    "password": "$2b$10$4lYp6tNY8EGqVaVjvfJkRuyLNQhZvRe7.xTWSzHum5.p/28ARlqUi",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-16T15:35:46.892Z"
+  },
+  {
+    "id": 9,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsysa001@gmail.com",
+    "password": "$2b$10$B6dPO5Z1KSQ0tNbLtt.lW.ErkhCDX04OJseC.xtyPW9BMeuqPiVW6",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-17T18:40:18.771Z"
+  },
+  {
+    "id": 10,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsyda001@gmail.com",
+    "password": "$2b$10$L.A7nIUVeggPgovBgNxkFuXQaful1FCjEI2Z5WBg92yRlHmm2cJ9K",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-19T18:32:57.456Z"
+  },
+  {
+    "id": 11,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "satsya0ds01@gmail.com",
+    "password": "$2b$10$ayWWJ.1ykb.pSnkkHt2dBuTO4ThXUPVXfPrLd2zRMqejCBGQuuDWS",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-19T18:37:02.378Z"
+  },
+  {
+    "id": 12,
+    "firstName": "Sphinx",
+    "lastName": "Destroy",
+    "email": "Sphinx@gmail.com",
+    "password": "$2b$10$PEx9H.2u8Ut6PYApqTGP8.NpBiPamF.0M6ulT0NdqV7dri63DjBcO",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-21T19:15:25.574Z"
+  },
+  {
+    "id": 13,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "Sphinssx@gmail.com",
+    "password": "$2b$10$wvmb.TAhm67/2mdN1Xd8OeFFDyUjTPG.HvIGRtvWV.mSvFLZVUdJa",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-21T19:16:00.002Z"
+  }
+]

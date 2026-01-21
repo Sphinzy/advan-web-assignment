@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <!-- Icons  -->
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css">
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Regular.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Regular.ttf">
+
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+
+</head>
+<style>
+    body {
+        background: #f8f9fa;
+        font-family: Inter, sans-serif;
+    }
+
+    .ql-toolbar {
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+    }
+
+    .ql-container {
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        min-height: 250px;
+    }
+
+    /* Quill placeholder */
+    .ql-editor.ql-blank::before {
+        color: #adb5bd;
+        font-size: 1.1rem;
+        font-style: normal;
+    }
+
+    .publish-btn:hover {
+        opacity: 0.85;
+        transition: opacity 0.2s ease-in-out;
+    }
+</style>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="sticky-top " style="z-index: 5;">
+        <nav class="navbar fixed-top bg-secondary-subtle">
+            <div class="container">
+                <div>
+                    <img src="../../img/logo-team.png" id="logoImage" alt="">
+                    <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                </div>
+
+                <!-- menu icon  -->
+                <button class="navbar-toggler d-flex d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- side bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <img src="../../img/logo-team.png" id="logoImage" alt="">
+                            <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item ps-3 rounded-2">
+                                <a href="../index.html" class="nav-link "><i
+                                        class="bi bi-house-door-fill pe-1"></i>Home</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./jobs.html" class="nav-link text-main"><i
+                                        class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./blog.html" class="nav-link text-main active"><i
+                                        class="bi bi-newspaper pe-1"></i>Blog</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./about.html" class="nav-link text-main"><i
+                                        class="bi bi-info-circle-fill pe-1"></i>About</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./contact.html" class="nav-link text-main"><i
+                                        class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                            </li>
+                        </ul>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <!-- input search  -->
+                <div class="d-none d-lg-flex" style="width: 500px;">
+                    <ul class="navbar-nav d-flex flex-row justify-content-evenly w-100">
+                        <li class="nav-item ps-3 rounded-2">
+                            <a href="../index.html" class="nav-link "><i class="bi bi-house-door-fill pe-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./jobs.html" class="nav-link text-main"><i
+                                    class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./blog.html" class="nav-link text-main active  "><i
+                                    class="bi bi-newspaper pe-1"></i>Blog</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./about.html" class="nav-link text-main"><i
+                                    class="bi bi-info-circle-fill pe-1"></i>About</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./contact.html" class="nav-link text-main"><i
+                                    class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dropdown d-none d-lg-flex">
+                    <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div style="border: 2px solid var(--bs-main); border-radius: 50%; ">
+                            <img src="../assets/images/profile.png" class="img-fluid rounded-circle object-fit-cover"
+                                id="profile-image" style="width: 40px; height: 40px;" alt />
+                        </div>
+                    </a>
+
+                    <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                        <li><a class='dropdown-item' href='../pages/profile.html'><i
+                                    class="bi bi-person-circle me-2"></i>Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                    class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <h3 class="text-danger">Logout</h3>
+                    <p>Are you sure you want to logout?</p>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-main" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" id="btnLogout">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="my-15">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <header class="mb-4">
+                            <h1 class="fw-bold" style="color: var(--bs-main);">Create Blog Post</h1>
+                            <p class="text-muted">Fill in the details below to publish a new story.</p>
+                        </header>
+
+                        <main class="card shadow-sm border">
+                            <div class="card-body p-4">
+
+                                <div class="row g-3">
+                                    <!-- Title -->
+                                    <div class="col-6 mb-4">
+                                        <label class="form-label fw-semibold">Title *</label>
+                                        <input type="text" id="title" name="title" class="form-control"
+                                            placeholder="Title of content">
+                                        <div id="titleError" class="text-danger small mt-1 d-none">
+                                            Title cannot be empty
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold">Image URL *</label>
+                                        <input type="text" id="image" class="form-control"
+                                            placeholder="https://example.com/image.jpg">
+                                    </div>
+
+                                </div>
+
+                                <!-- Content -->
+                                <div class="mt-4">
+                                    <label class="form-label fw-semibold">Content *</label>
+                                    <div id="editorContainer" class="border rounded">
+                                        <div id="editor"></div>
+                                    </div>
+                                    <div id="contentError" class="text-danger small mt-1 d-none">
+                                        Content cannot be empty
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                                    <a href="./blog.html" class="text-main text-decoration-none">← Back to Blog</a>
+                                    <button type="button" id="publishBtn" class="btn px-4 publish-btn text-light"
+                                        style="background-color: var(--bs-main);">
+                                        Publish
+                                    </button>
+                                </div>
+
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-main text-white w-100 py-4" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/images/profile.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <p class="mt-2">
+                        This platform provides career guidance, job information, scholarships, and opportunities
+                        for Cambodian youth to make informed decisions about their future.
+                    </p>
+                </div>
+
+                <div class="col-6 col-lg-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/asset/page/us/about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="/asset/page/us/contact" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="/asset/page/direction/major" class="text-white text-decoration-none">Career
+                                Guidance</a></li>
+                        <li><a href="/asset/page/us/event" class="text-white text-decoration-none">Events</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-4 mb-3">
+                    <h5>Contact</h5>
+                    <p>Email: <a href="mailto:foryouthcambodia@gmail.com"
+                            class="text-white">foryouthcambodia@gmail.com</a>
+                    </p>
+                    <p>Phone: <a href="tel:+11234567890" class="text-white">(+885) 456 7890</a></p>
+                </div>
+            </div>
+
+            <hr class="bg-light" />
+            <div class="text-center">
+                &copy; 2025 FYC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/createPost.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="../assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        /* ================= QUILL ================= */
+        const quill = new Quill("#editor", {
+            theme: "snow",
+            placeholder: "Write Content here ..."
+        });
+
+
+    </script>
+</body>
+
+</html>

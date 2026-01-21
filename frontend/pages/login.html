@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <!-- Icons  -->
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css">
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Regular.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Regular.ttf">
+
+</head>
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form {
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      background-color: rgba(215, 211, 211, 0.28);
+      padding: 20px;
+    }
+
+    .toggle-password {
+      cursor: pointer;
+    }
+.input-error {
+  border: 1px solid red !important;
+}
+
+.input-normal {
+  border: 1px solid #ced4da;
+  /* bootstrap default */
+}
+</style>
+<body class="bg-main">
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="row" style="height: 100vh; display: flex; align-items: center;">
+                    <!-- Left Image -->
+                    <div class="col-lg-6 d-none d-lg-flex align-items-center">
+                        <img src="../assets/images/login.png" alt="Sign in" class="img-fluid w-100">
+                    </div>
+        
+                    <!-- Login Form -->
+                    <div class="col-12 col-lg-6 ps-lg-5">
+                        <form id="loginform" class="p-3">
+                            <h1 class="text-center mb-3" style="font-weight: 600;">Sign in</h1>
+                            <p class="text-center mb-4">Enter your credentials to access your account</p>
+        
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email Address</label>
+                                <input type="text" class="form-control" id="email" placeholder="Enter your Email">
+                                <span id="erremail" class="text-danger"></span>
+                            </div>
+        
+                            <!-- Password -->
+                            <div class="mb-3 position-relative">
+                                <label for="password" class="form-label"><i class="bi bi-lock"></i> Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+                                <span class="toggle-password text-main position-absolute translate-middle-y me-3"
+                                    style="top: 75%; right: 0;" onclick="togglePassword()">
+                                    <i class="bi bi-eye-slash" id="eyeIcon"></i>
+                                </span>
+                                <span id="errpassword" class="text-danger d-block mt-2"></span>
+                            </div>
+        
+                            <!-- Terms Checkbox -->
+                            <div class="form-check mb-4">
+                                <input type="checkbox" class="form-check-input bg-main border-0" id="check1" checked>
+                                <label class="form-check-label" for="check1">
+                                    I accept the <a href="#" style="text-decoration: none;"
+                                        class="text-white text-decoration-underline">Terms</a>
+                                </label>
+                            </div>
+        
+                            <!-- Social Buttons -->
+                            <div class="d-flex justify-content-between mb-4">
+                                <a href="https://www.google.com" class="btn btn-main w-100 me-2"><i class="bi bi-google"></i>
+                                    Google</a>
+                                <a href="https://www.apple.com" class="btn btn-main w-100 ms-2"><i class="bi bi-apple"></i>
+                                    Apple</a>
+                            </div>
+        
+                            <!-- Login Button -->
+                            <button type="submit" class="btn btn-main w-100 mb-3">Login</button>
+        
+                            <!-- Register Link -->
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="../pages/register.html"
+                                        class="text-white">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- Toast Container -->
+            <div class="toast-container top-0 start-50 translate-middle-x p-3">
+                <div id="toastMsg" class="toast align-items-center" role="alert">
+                    <div class="toast-body text-center">
+                        Toast message here
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

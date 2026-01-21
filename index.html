@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row card-insert">
+            <!-- Content  -->
+        </div>
+    </div>
+
+    <script>
+        const baseUrl = 'http://localhost:3000/'
+
+        fetch(`${baseUrl}api/users`)
+        .then(res => res.json())
+        .then(resData => {
+            console.log(resData);
+            const data = resData.data;
+            let card = '';
+            for(i = 0; i < data.length; i++){
+                console.log(data[i]);
+                card += `
+                    <div class="col-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="${data[i].avatar}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${data[i].firstName} ${data[i].lastName}</h5>
+                                <p class="card-text">${data[i].email}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    }
+            document.querySelector('.card-insert').innerHTML = card;
+            
+
+        })
+
+    </script>
+
+
+
+</body>
+</html>
