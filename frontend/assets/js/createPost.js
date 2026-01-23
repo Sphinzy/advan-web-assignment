@@ -53,11 +53,21 @@ publishBtn.addEventListener("click", async () => {
         if (!res.ok) {
             alert(data.message || "Failed to create post");
             return;
+        } else {
+            alert("Post created successfully ✅");
+            try {
+                await fetch("http://localhost/NU/job/backend/api/import_posts_from_json.php", {
+                    method: "GET" // it can be GET since your PHP script runs on access
+                });
+                console.log("✅ Import script triggered successfully");
+            } catch (err) {
+                console.error("❌ Failed to trigger import script:", err);
+            }
+            console.log("createPost.js loaded successfully");
+            window.location.href = "./blog.html";
         }
 
-        alert("Post created successfully ✅");
-        console.log("createPost.js loaded successfully");
-        window.location.href = "./blog.html";
+        
 
     } catch (error) {
         console.error(error);

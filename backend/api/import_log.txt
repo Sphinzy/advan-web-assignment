@@ -1,0 +1,77 @@
+[2026-01-22 18:50:47] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 18:50:47] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 18:50:47] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 18:50:47] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 18:50:47] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 18:50:47] 🗑️  Removed 5 old jobs that are no longer in JSON
+[2026-01-22 18:50:47] ✅ Import completed: 0 new, 0 updated
+[2026-01-22 18:51:29] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 18:51:29] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 18:51:29] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 18:51:29] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 18:51:29] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 18:51:29] ✅ Import completed: 1 new, 0 updated
+[2026-01-22 18:53:11] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 18:53:11] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 18:53:11] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 18:53:11] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 18:53:11] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 18:53:11] 🗑️  Removed 5 old jobs that are no longer in JSON
+[2026-01-22 18:53:11] ✅ Import completed: 0 new, 0 updated
+[2026-01-22 18:55:17] ⏭️ No changes detected in jobs.json
+[2026-01-22 18:56:13] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 18:56:13] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 18:56:13] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 18:56:13] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 18:56:13] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 18:56:13] ✅ Import completed: 1 new, 0 updated
+[2026-01-22 19:04:25] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:04:25] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:04:25] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:04:25] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:04:25] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:04:25] ✅ Import completed: 1 new, 0 updated
+[2026-01-22 19:06:44] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:06:44] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:06:44] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:06:44] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:06:44] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:06:44] 🗑️  Removed 5 old jobs that are no longer in JSON
+[2026-01-22 19:06:44] ✅ Import completed: 0 new, 0 updated
+[2026-01-22 19:35:45] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:35:45] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:35:45] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:35:45] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:35:45] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:35:45] ✅ Import completed: 27 jobs processed
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:35:57] ✅ Import completed: 27 jobs processed
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:35:57] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:35:57] ✅ Import completed: 27 jobs processed
+[2026-01-22 19:36:31] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:36:31] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:36:31] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:36:31] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:36:31] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:36:31] ✅ Import completed: 0 new, 0 updated
+[2026-01-22 19:37:34] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:37:37] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:38:02] ⚠️  Skipping job at index 0: Missing fields - categoryId
+[2026-01-22 19:38:02] ⚠️  Skipping job at index 1: Missing fields - categoryId
+[2026-01-22 19:38:02] ⚠️  Skipping job at index 4: Missing fields - categoryId
+[2026-01-22 19:38:02] ⚠️  Skipping job at index 5: Missing fields - categoryId
+[2026-01-22 19:38:02] ⚠️  Skipping job at index 6: Missing fields - categoryId
+[2026-01-22 19:38:02] ✅ Import completed: 1 new, 0 updated
+[2026-01-22 19:38:08] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:38:31] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:38:58] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:39:08] ⏭️ No changes detected in jobs.json
+[2026-01-22 19:40:52] ⏭️ No changes detected in jobs.json

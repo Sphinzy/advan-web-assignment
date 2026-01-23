@@ -55,7 +55,7 @@ loginform.addEventListener("submit", function (event) {
         body: JSON.stringify({ email: email.value, password: password.value })
     })
         .then(res => res.json())
-        .then(data => {
+        .then(async data => {
             console.log("Login response:", data);
             if (!data.result) {
                 showToast("Invalid email or password!", "error");
@@ -66,8 +66,20 @@ loginform.addEventListener("submit", function (event) {
                 localStorage.setItem("token", data.data.token);
                 localStorage.setItem("getImage", data.data.user.avatar);
                 window.location.href = "../index.html";
+
+                // Trigger PHP import script
+                try {
+                    const importRes = await fetch("http://localhost/NU/job/backend/api/import_users_from_json.php", {
+                        method: "GET"
+                    });
+                    const importText = await importRes.text();
+                    console.log("✅ Import script output:", importText);
+                } catch (err) {
+                    console.error("❌ Failed to trigger import script:", err);
+                }
             }
         })
+
         .catch(err => {
             console.error("Login fetch error:", err);
             showToast("Server error! Please try again.", "error");

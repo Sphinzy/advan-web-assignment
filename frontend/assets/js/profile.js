@@ -1,6 +1,7 @@
 const baseUrl = 'http://localhost:3000';
 const userId = 9; // Change this to the logged-in user ID
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTAwODMxNywiZXhwIjoxNzY5NjEzMTE3fQ.fKpCbu6bZYfrGr6Vauv7qEvb_AF93Xhf2bim1AeItHs'; // Replace with actual token
+// const token = localStorage.getItem("token");
 
 const avatar = document.getElementById('profile-avatar');
 const nameEl = document.getElementById('profile-name');
@@ -10,30 +11,36 @@ const jobsContainer = document.getElementById('jobs-container');
 const blogsContainer = document.getElementById('blogs-container');
 
 // ================= DELETE FUNCTION =================
-window.deletePost = async function (type, id) {
+window.deletePost = async function(type, id) {
     if (!confirm(`Are you sure you want to delete this ${type}?`)) return;
 
     try {
-        const res = await fetch(`${baseUrl}/api/posts/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+        const res = await fetch("http://localhost/NU/job/backend/api/posts.php", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id }) // send ID as JSON
         });
 
-        if (!res.ok) throw new Error('Failed to delete');
-
         const data = await res.json();
-        console.log(`${type} deleted:`, data);
 
-        await Render(); // Re-render after delete
+        if (!data.success) throw new Error(data.error || 'Failed to delete');
+        try {
+            await fetch("http://localhost/NU/job/backend/api/posts.php", {
+                method: "DELETE" // it can be GET since your PHP script runs on access
+            });
+            console.log("✅ Import script triggered successfully");
+        } catch (err) {
+            console.error("❌ Failed to trigger import script:", err);
+        }
         alert(`${type} deleted successfully!`);
+        await Render(); // refresh your frontend
+
     } catch (err) {
         console.error(err);
-        alert(`Error deleting ${type}`);
+        alert(`Error deleting ${type}: ${err.message}`);
     }
 };
+
 
 // ================= UPDATE POST =================
 const updatePost = async (postId) => {

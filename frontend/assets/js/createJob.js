@@ -1,5 +1,6 @@
 // ===== BEARER TOKEN =====
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2ODkyMTMwMywiZXhwIjoxNzY5NTI2MTAzfQ.g8kzC5Ai8ItElPmAPhCAD4yK1HJkB6ovoH3qLpWmHZo';
+// const token = localStorage.getItem("token");
 
 // ===== INPUT ELEMENTS =====
 const titleInput = document.querySelector('input[name="title"]');
@@ -83,6 +84,14 @@ jobBtn.addEventListener('click', async (e) => {
 
         if (res.ok) {
             alert("Job published successfully!");
+            try {
+                await fetch("http://localhost/NU/job/backend/api/import_jobs_from_json.php", {
+                    method: "GET" // it can be GET since your PHP script runs on access
+                });
+                console.log("✅ Import script triggered successfully");
+            } catch (err) {
+                console.error("❌ Failed to trigger import script:", err);
+            }
             window.location.href = "./jobs.html";
         } else {
             console.error(data);
