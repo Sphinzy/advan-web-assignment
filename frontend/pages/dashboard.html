@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <!-- Icons  -->
+    <link rel="stylesheet" href="../assets/icons/bootstrap-icons.css">
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/KantumruyPro-Regular.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Bold.ttf">
+    <link rel="stylesheet" href="../assets/fonts/Poppins-Regular.ttf">
+
+</head>
+
+<body>
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-body">
+                    <h3 class="text-danger">Logout</h3>
+                    <p>Are you sure you want to logout?</p>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-main" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" id="btnLogout">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="d-flex">
+
+        <!-- Sidebar -->
+        <div class="nav flex-column nav-pills bg-white shadow-sm px-4 py-3" style="width: 250px; height: 100vh;">
+            <a class="navbar-brand fs-5 fw-bold text-main text-center mb-3" href="#">JOBHUB</a>
+
+            <button class="nav-link active text-start d-flex align-items-center" id="v-pills-users-tab"
+                data-bs-toggle="pill" data-bs-target="#usersTab" type="button">
+                <i class="bi bi-people me-2"></i> Users
+            </button>
+
+            <button class="nav-link text-start d-flex align-items-center" id="v-pills-jobs-tab" data-bs-toggle="pill"
+                data-bs-target="#jobsTab" type="button">
+                <i class="bi bi-briefcase me-2"></i> Jobs
+            </button>
+
+            <button class="nav-link text-start d-flex align-items-center" id="v-pills-categories-tab"
+                data-bs-toggle="pill" data-bs-target="#categoriesTab" type="button">
+                <i class="bi bi-list-ul me-2"></i> Categories
+            </button>
+
+            <button class="nav-link text-start d-flex align-items-center" id="v-pills-posts-tab" data-bs-toggle="pill"
+                data-bs-target="#postsTab" type="button">
+                <i class="bi bi-newspaper me-2"></i> Posts
+            </button>
+            <button class="nav-link text-start d-flex align-items-center" data-bs-toggle="modal"
+                data-bs-target="#logoutModal" type="button">
+                <i class="bi bi-box-arrow-left me-2"></i> leave
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content flex-grow-1 p-3 overflow-x-auto">
+
+            <!-- Users Tab -->
+            <div class="tab-pane fade show active overflow-x-auto" style="height: 95vh;" id="usersTab" role="tabpanel">
+                <h3 class="text-main pt-5 pb-3">Users</h3>
+                <button class="btn btn-main mb-2" id="addUserBtn">Add User</button>
+                <table class="table table-striped" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>CreateAt</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Jobs Tab -->
+            <div class="tab-pane fade overflow-x-auto" style="height: 95vh;" id="jobsTab" role="tabpanel">
+                <h3 class="text-main pt-5 pb-3">Jobs</h3>
+                <button class="btn btn-main mb-2" id="addJobBtn">Add Job</button>
+                <table class="table table-striped" id="jobsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Salary</th>
+                            <th>CreateAt</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Categories Tab -->
+            <div class="tab-pane fade overflow-x-auto" style="height: 95vh;" id="categoriesTab" role="tabpanel">
+                <h3 class="text-main pt-5 pb-3">Categories</h3>
+                <button class="btn btn-main mb-2" id="addCategoryBtn">Add Category</button>
+                <table class="table table-striped" id="categoriesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>CreateAt</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Posts Tab -->
+            <div class="tab-pane fade overflow-x-auto" style="height: 95vh;" id="postsTab" role="tabpanel">
+                <h3 class="text-main pt-5 pb-3">Posts</h3>
+                <button class="btn btn-main mb-2" id="addPostBtn">Add Post</button>
+                <table class="table table-striped" id="postsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>CreateAt</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

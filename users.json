@@ -115,5 +115,77 @@
     "password": "$2b$10$wvmb.TAhm67/2mdN1Xd8OeFFDyUjTPG.HvIGRtvWV.mSvFLZVUdJa",
     "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
     "registeredAt": "2026-01-21T19:16:00.002Z"
+  },
+  {
+    "id": 14,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "admin@gmail.com",
+    "password": "$2b$10$4fEuOAn3DMfSrKmcofDF.us4v4H5k/DUFfSeagoYW.Yp/9rlqWrSu",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:25:47.709Z"
+  },
+  {
+    "id": 15,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "satsysa0dd01@gmail.com",
+    "password": "$2b$10$HYgEXC4sDucFTSGTgmkXFO0gvn7S5C0ni1bffjztQkOmTLP6WiuPS",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:27:38.582Z"
+  },
+  {
+    "id": 16,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "Sphinxd@gmail.com",
+    "password": "$2b$10$8RR3PPF0j72eAVYVJ2kuW.lmgP90XkxG9QBCVInaUjyQOVbyjm9Me",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:28:29.751Z"
+  },
+  {
+    "id": 17,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "satsysa0dddd01@gmail.com",
+    "password": "$2b$10$b/DRSXpZCMgycUZKIaisi.yHE6hV9jvjCKRJ35xdQxTo.4qILdO3S",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:30:15.215Z"
+  },
+  {
+    "id": 18,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "satsysa0ddad01@gmail.com",
+    "password": "$2b$10$sZwvzMUGeSydbzFgjd7VQ.mEhSTe84/wNj3k4POFTLVQX60RYEmhG",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:35:45.696Z"
+  },
+  {
+    "id": 19,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "Sphidddnx@gmail.com",
+    "password": "$2b$10$D5RuvowZq4LYrdGC.Ks7z.Sck9iE1ir8dvG64ih2K0kvmHSfxY65e",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:36:57.262Z"
+  },
+  {
+    "id": 20,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "assdmisssn@gmail.com",
+    "password": "$2b$10$dU9G99F40X5vF7yOkGvDwOqAsE78Owpl/.YbYozxUJ8vcDzcV9uJS",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:43:29.241Z"
+  },
+  {
+    "id": 21,
+    "firstName": "CHUM",
+    "lastName": "Satsya",
+    "email": "addddddmin@gmail.com",
+    "password": "$2b$10$wgtZ9N/uVtkMXrTSc1gdBuU19JRA.QsoQy54EpsYDceskydopED3u",
+    "avatar": "https://i.pinimg.com/236x/d6/5c/fa/d65cfa8b47227df12fb97217e8f940e3.jpg",
+    "registeredAt": "2026-01-23T19:45:16.886Z"
   }
 ]

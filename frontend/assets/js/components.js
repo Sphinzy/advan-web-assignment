@@ -3,7 +3,7 @@ document.querySelector('header').innerHTML = `
         <div class="container">
             <div>
                 <img src="../../img/logo-team.png" id="logoImage" alt="">
-                <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
             </div>
 
             <!-- menu icon  -->
@@ -18,7 +18,7 @@ document.querySelector('header').innerHTML = `
                 <div class="offcanvas-header">
                     <div>
                         <img src="../../img/logo-team.png" id="logoImage" alt="">
-                        <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                        <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>

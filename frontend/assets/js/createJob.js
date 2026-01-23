@@ -1,6 +1,5 @@
 // ===== BEARER TOKEN =====
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2ODkyMTMwMywiZXhwIjoxNzY5NTI2MTAzfQ.g8kzC5Ai8ItElPmAPhCAD4yK1HJkB6ovoH3qLpWmHZo';
-// const token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 
 // ===== INPUT ELEMENTS =====
 const titleInput = document.querySelector('input[name="title"]');
@@ -25,6 +24,40 @@ function showError(field) {
     alert(`Please fill in ${field}`);
 }
 
+// ===== FETCH CATEGORIES =====
+async function loadCategories() {
+    try {
+        const res = await fetch("http://localhost:3000/api/categories");
+        const data = await res.json();
+
+        if (!res.ok) {
+            console.error("Failed to load categories");
+            return;
+        }
+
+        // clear old options (keep placeholder)
+        categorySelect.innerHTML = '<option value="">-- Select Category --</option>';
+
+        data.data.forEach(category => {
+            const option = document.createElement("option");
+            option.value = category.id;
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
+        });
+
+        // optional: select first category by default
+        if (data.data.length > 0) {
+            categorySelect.value = data.data[0].id;
+        }
+
+    } catch (err) {
+        console.error("Category fetch error:", err);
+    }
+}
+
+// call on page load
+loadCategories();
+
 // ===== SUBMIT =====
 jobBtn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -34,7 +67,7 @@ jobBtn.addEventListener('click', async (e) => {
     const location = locationInput.value.trim();
     const salary = salaryInput.value.trim();
     const deadline = deadlineInput.value;
-    const categoryId = parseInt(categorySelect.value) || 1;
+    const categoryId = parseInt(categorySelect.value);
     const contactEmail = contactInput.value.trim();
     const requirements = requirementsInput.value.trim();
     const description = quill.root.innerHTML.trim();
@@ -63,7 +96,7 @@ jobBtn.addEventListener('click', async (e) => {
         deadline,
         contactEmail,
         categoryId,
-        image // string URL
+        image
     };
 
     // ===== SEND TO BACKEND =====
@@ -86,7 +119,7 @@ jobBtn.addEventListener('click', async (e) => {
             alert("Job published successfully!");
             try {
                 await fetch("http://localhost/NU/job/backend/api/import_jobs_from_json.php", {
-                    method: "GET" // it can be GET since your PHP script runs on access
+                    method: "GET"
                 });
                 console.log("✅ Import script triggered successfully");
             } catch (err) {

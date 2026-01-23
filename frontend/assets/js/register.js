@@ -49,6 +49,14 @@ function signup() {
     [fname, lname, email, password, cpassword].forEach(clearError);
 
     // Validation
+    if (!fname.value.trim() && !lname.value.trim() && !email.value.trim() && !password.value && !cpassword.value) {
+        showError(fname);
+        showError(lname);
+        showError(email);
+        showError(password);
+        showError(cpassword);
+        return showToast("Invalid Input", "error");
+    }
     if (!fname.value.trim()) { showError(fname); return showToast("First Name is required", "error"); }
     if (!lname.value.trim()) { showError(lname); return showToast("Last Name is required", "error"); }
     if (!email.value.trim()) { showError(email); return showToast("Email is required", "error"); }
@@ -56,7 +64,6 @@ function signup() {
     if (!password.value) { showError(password); return showToast("Password is required", "error"); }
     if (password.value.length < 6) { showError(password); return showToast("Password must be at least 6 characters", "error"); }
     if (password.value !== cpassword.value) { showError(cpassword); return showToast("Passwords do not match", "error"); }
-    if (!document.getElementById("termsCheck").checked) return showToast("You must accept Terms & Privacy", "warning");
 
     // Submit form
     fetch("http://localhost:3000/api/auth/register", {
@@ -74,7 +81,9 @@ function signup() {
         .then(data => {
             if (data.result) {
                 showToast("Registered successfully!", "success");
-                setTimeout(() => { window.location.replace("login.html"); }, 1000);
+                setTimeout(() => {
+                    window.location.replace("../pages/login.html");
+                }, 1000);
             } else {
                 showToast("Registration failed: " + (data.message || "Unknown error"), "error");
             }

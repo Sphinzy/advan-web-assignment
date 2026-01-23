@@ -1,91 +1,93 @@
-const loginform = document.getElementById("loginform");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const erremail = document.getElementById("erremail");
-const errpassword = document.getElementById("errpassword");
-const eyeIcon = document.getElementById("eyeIcon");
-const baseUrl = "http://localhost:3000";
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("loginform");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const eyeIcon = document.getElementById("eyeIcon");
+    const baseUrl = "http://localhost:3000";
 
-// ------------------- Toast Helper -------------------
-function showToast(message, type = 'success') {
-    const toastEl = document.getElementById('toastMsg');
-    toastEl.querySelector('.toast-body').textContent = message;
+    // Toggle Password Visibility
+    eyeIcon.addEventListener("click", () => {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.classList.replace("bi-eye-slash", "bi-eye");
+        } else {
+            passwordInput.type = "password";
+            eyeIcon.classList.replace("bi-eye", "bi-eye-slash");
+        }
+    });
 
-    // Set color based on type
-    toastEl.classList.remove('bg-cus-success', 'bg-cus-danger', 'bg-warning');
-    if (type === 'success') toastEl.classList.add('bg-cus-success');
-    else if (type === 'error') toastEl.classList.add('bg-cus-danger');
-    else if (type === 'warning') toastEl.classList.add('bg-warning');
+    // Toast Helper
+    function showToast(message, type = "success") {
+        const toastEl = document.getElementById("toastMsg");
+        toastEl.querySelector(".toast-body").textContent = message;
+        toastEl.classList.remove("bg-cus-success", "bg-cus-danger", "bg-warning");
 
-    const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
-    toast.show();
-}
+        if (type === "success") toastEl.classList.add("bg-cus-success");
+        else if (type === "error") toastEl.classList.add("bg-cus-danger");
+        else if (type === "warning") toastEl.classList.add("bg-warning");
 
-// ------------------- Input Helpers -------------------
-const showError = (input) => {
-    input.classList.add("input-error");
-    input.classList.remove("input-normal");
-};
-
-const clearError = (input) => {
-    input.classList.remove("input-error");
-    input.classList.add("input-normal");
-};
-
-// ------------------- Toggle Password -------------------
-function togglePassword() {
-    if (password.type === "password") {
-        password.type = "text";
-        eyeIcon.classList.replace("bi-eye-slash", "bi-eye");
-    } else {
-        password.type = "password";
-        eyeIcon.classList.replace("bi-eye", "bi-eye-slash");
+        new bootstrap.Toast(toastEl, { delay: 3000 }).show();
     }
-}
 
-// ------------------- Login Submit -------------------
-loginform.addEventListener("submit", function (event) {
-    event.preventDefault();
+    // Input Helpers
+    const showError = (input) => input.classList.add("input-error");
+    const clearError = (input) => input.classList.remove("input-error");
 
-    console.log("Attempting login with:", email.value, password.value);
+    emailInput.addEventListener("input", () => clearError(emailInput));
+    passwordInput.addEventListener("input", () => clearError(passwordInput));
 
-    fetch(`http://localhost:3000/api/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.value, password: password.value })
-    })
-        .then(res => res.json())
-        .then(async data => {
-            console.log("Login response:", data);
-            if (!data.result) {
-                showToast("Invalid email or password!", "error");
-                showError(email);
-                showError(password);
-            } else {
-                showToast("Login successful!", "success");
-                localStorage.setItem("token", data.data.token);
-                localStorage.setItem("getImage", data.data.user.avatar);
-                window.location.href = "../index.html";
+    // Handle Login
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-                // Trigger PHP import script
-                try {
-                    const importRes = await fetch("http://localhost/NU/job/backend/api/import_users_from_json.php", {
-                        method: "GET"
-                    });
-                    const importText = await importRes.text();
-                    console.log("✅ Import script output:", importText);
-                } catch (err) {
-                    console.error("❌ Failed to trigger import script:", err);
-                }
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        // 🔐 Admin check FIRST
+        if (email === "admin@gmail.com" && password === "Satsya!22") {
+            showToast("Welcome Admin!", "success");
+
+            localStorage.setItem("role", "admin");
+            localStorage.setItem("token", "admin-token");
+
+            setTimeout(() => {
+                window.location.href = "../pages/dashboard.html";
+            }, 800);
+
+            return; // STOP normal login
+        }
+
+        // 👤 Normal user login
+        try {
+            const res = await fetch(`${baseUrl}/api/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok || !data.result) {
+                showToast("Invalid email or password", "error");
+                showError(emailInput);
+                showError(passwordInput);
+                return;
             }
-        })
 
-        .catch(err => {
-            console.error("Login fetch error:", err);
-            showToast("Server error! Please try again.", "error");
-        });
+            localStorage.setItem("token", data.data.token);
+            localStorage.setItem("id", data.data.user.id);
+            localStorage.setItem("role", "user");
+
+            showToast("Login successful!", "success");
+
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 800);
+
+        } catch (err) {
+            console.error(err);
+            showToast("Server error", "error");
+        }
+    });
+
 });
-
-
-email.addEventListener("input", () => clearError(email));
-password.addEventListener("input", () => clearError(password));

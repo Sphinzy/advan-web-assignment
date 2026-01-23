@@ -70,7 +70,7 @@
             <div class="container">
                 <div>
                     <img src="../../img/logo-team.png" id="logoImage" alt="">
-                    <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                    <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
                 </div>
     
                 <!-- menu icon  -->
@@ -85,7 +85,7 @@
                     <div class="offcanvas-header">
                         <div>
                             <img src="../../img/logo-team.png" id="logoImage" alt="">
-                            <a class="navbar-brand fs-5 fw-bold text-main" href="#">BlogFy</a>
+                            <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
                         </div>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -148,10 +148,10 @@
                     </a>
     
                     <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
-                        <li><a class='dropdown-item' href=''><i
+                        <li><a class='dropdown-item' href='./pages/profile.html'><i
                                     class="bi bi-person-circle me-2"></i>Profile</a>
                         </li>
-                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                        <li><a class="dropdown-item" href="pages/login.html " data-bs-toggle="modal" data-bs-target="#logoutModal"><i
                                     class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
                     </ul>
                 </div>
@@ -482,11 +482,11 @@
         <div class="row">
             <div class="col-12 col-lg-4 mb-3">
                 <a class="navbar-brand" href="#">
-                    <img src="../assets/images/profile.png" alt="Logo" style="width: 75px" />
+                    <img src="assets/images/logoTeam.png" alt="Logo" style="width: 75px" />
                 </a>
                 <p class="mt-2">
                     This platform provides career guidance, job information, scholarships, and opportunities
-                    for Cambodian youth to make informed decisions about their future.
+                    JOBHUB to make informed decisions about their future.
                 </p>
             </div>
 
@@ -503,7 +503,7 @@
 
             <div class="col-6 col-lg-4 mb-3">
                 <h5>Contact</h5>
-                <p>Email: <a href="mailto:foryouthcambodia@gmail.com" class="text-white">foryouthcambodia@gmail.com</a>
+                <p>Email: <a href="mailto:jobhub@gmail.com" class="text-white">jobhub@gmail.com</a>
                 </p>
                 <p>Phone: <a href="tel:+11234567890" class="text-white">(+885) 456 7890</a></p>
             </div>
@@ -574,6 +574,19 @@
                         }, stepTime);
                     });
                 });
+                const btnLogout = document.querySelector("#btnLogout");
+                    const id = localStorage.getItem('id')
+                    if (btnLogout) {
+                        btnLogout.addEventListener("click", () => {
+                            location.href = "pages/login.html";
+                        });
+                    }
+                    fetch(`http://localhost:3000/api/users/${id}`)
+                        .then(res => res.json())
+                        .then(resData => {
+                            console.log(resData);
+                            document.querySelector('#profile-image').src = resData.data.avatar;
+                        })
     </script>
 
 </body>

@@ -90,7 +90,11 @@ body {
 /* =========================
       BUTTONS
    ========================= */
-
+/* #logoImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+} */
 .btn-main {
     background-color: var(--bs-main) !important;
     border-color: var(--bs-main) !important;
@@ -487,7 +491,22 @@ select.form-select.error {
     border-radius: 5px !important;
     color: #a12a2a !important;
 }
+.nav-pills .nav-item .nav-link {
+    color: var(--bs-main) !important;
+}
+.nav-pills .nav-item .active{
+    background-color: var(--bs-main) !important;
+    color: white !important;
+}
 
+.nav .nav-link {
+    color: var(--bs-main) !important;
+}
+
+.nav .active {
+    background-color: var(--bs-main) !important;
+    color: white !important;
+}
 /* toast  */
 #toastMsg {
     width: auto;

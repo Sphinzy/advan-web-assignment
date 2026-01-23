@@ -543,5 +543,33 @@
     "categoryId": 1,
     "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
     "createdAt": "2026-01-23T10:50:47.126Z"
+  },
+  {
+    "id": 43,
+    "title": "asdf",
+    "type": "Part-time",
+    "location": "Komport",
+    "description": "<p>asdf</p>",
+    "requirements": "Web",
+    "salary": "555",
+    "deadline": "2026-01-24",
+    "contactEmail": "me@mydomain.com",
+    "categoryId": 1,
+    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "createdAt": "2026-01-23T16:31:30.159Z"
+  },
+  {
+    "id": 44,
+    "title": "asdf",
+    "type": "Part-time",
+    "location": "Komport",
+    "description": "<p>asdfad</p>",
+    "requirements": "Web",
+    "salary": "333",
+    "deadline": "2026-01-29",
+    "contactEmail": "me@mydomain.com",
+    "categoryId": 1,
+    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "createdAt": "2026-01-23T17:06:56.734Z"
   }
 ]

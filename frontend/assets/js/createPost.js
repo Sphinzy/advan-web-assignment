@@ -6,8 +6,8 @@ const titleError = document.getElementById("titleError");
 const contentError = document.getElementById("contentError");
 
 // Example: get token from localStorage
-// const token = localStorage.getItem("token");
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTAwODMxNywiZXhwIjoxNzY5NjEzMTE3fQ.fKpCbu6bZYfrGr6Vauv7qEvb_AF93Xhf2bim1AeItHs';
+const token = localStorage.getItem("token");
+// const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTAwODMxNywiZXhwIjoxNzY5NjEzMTE3fQ.fKpCbu6bZYfrGr6Vauv7qEvb_AF93Xhf2bim1AeItHs';
 
 publishBtn.addEventListener("click", async () => {
     const title = titleInput.value.trim();

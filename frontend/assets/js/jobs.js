@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const baseUrl = 'http://localhost:3000';
     let jobs = [];
     let filteredJobs = [];
@@ -15,35 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxSalary = document.getElementById('maxSalary');
     const filterCategory = document.getElementById('filterCategory');
 
-    // SWIPER
+    // ===== SWIPER =====
     new Swiper('.mySwiper', {
         pagination: { el: '.swiper-pagination' },
         autoplay: { delay: 4000 },
         loop: true
     });
 
-    // FETCH
+    // ===== FETCH JOBS =====
     async function fetchJobs() {
-        const res = await fetch(`${baseUrl}/api/jobs`);
-        const result = await res.json();
-        // console.log(result);
-        jobs = result.data;
-        buildCategories();
-        applyFilter();
+        try {
+            const res = await fetch(`${baseUrl}/api/jobs`);
+            const result = await res.json();
+            jobs = result.data;
+            await loadCategories(); // fetch categories dynamically
+            filteredJobs = [...jobs]; // show all jobs initially
+            render();
+        } catch (err) {
+            console.error("Failed to fetch jobs:", err);
+        }
     }
 
-    // BUILD CATEGORY DROPDOWN
-    function buildCategories() {
-        const categories = [...new Set(jobs.map(j => j.categoryName).filter(Boolean))];
-        categories.forEach(cat => {
-            const opt = document.createElement('option');
-            opt.value = cat.toLowerCase();
-            opt.textContent = cat;
-            filterCategory.appendChild(opt);
-        });
+    // ===== FETCH CATEGORIES =====
+    async function loadCategories() {
+        try {
+            const res = await fetch(`${baseUrl}/api/categories`);
+            const result = await res.json();
+            const categories = result.data;
+
+            filterCategory.innerHTML = `<option value="">-- Show All Categories --</option>`;
+            categories.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat.id;
+                opt.textContent = cat.name;
+                filterCategory.appendChild(opt);
+            });
+        } catch (err) {
+            console.error("Failed to load categories:", err);
+        }
     }
 
-    // FILTER LOGIC
+    // ===== FILTER LOGIC =====
     function applyFilter() {
         const title = filterTitle.value.toLowerCase();
         const location = filterLocation.value.toLowerCase();
@@ -58,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 job.location.toLowerCase().includes(location) &&
                 salaryNum >= min &&
                 salaryNum <= max &&
-                (!category || job.categoryName?.toLowerCase() === category)
+                (!category || job.categoryId == category) // show all if category is empty
             );
         });
 
@@ -66,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }
 
-    // DISPLAY
+    // ===== RENDER JOBS =====
     function render() {
         jobsContainer.innerHTML = '';
         const start = (currentPage - 1) * perPage;
@@ -78,56 +89,44 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        let html = '';
         pageJobs.forEach(job => {
-            console.log(job.id)
-            jobsContainer.innerHTML += `
-                <div class="col-md-3">
+            html += `
+                <div class="col-md-3 mb-3">
                     <a href="jobDetail.html?id=${job.id}" class="text-decoration-none text-dark">
-                            <div class="card shadow-sm border-0 h-100">
-                        <img src="${job.image}" class="card-img-top object-fit-cover" style="height:200px;">
-                        <div class="card-body">
-                            <h5 class="text-primary">${job.title}</h5>
-                            <span class="badge bg-success mb-2">${job.type}</span>
-
-                            <p class="text-muted mb-1">
-                                <i class="bi bi-geo-alt"></i> ${job.location}
-                            </p>
-
-                            <hr>
-
-                            <p><strong>Requirements:</strong> ${job.requirements}</p>
-                            <p><strong>Salary:</strong> ${job.salary}$</p>
-                            <p class="text-danger">
-                                <strong>Deadline:</strong>
-                                ${new Date(job.deadline).toLocaleDateString()}
-                            </p>
+                        <div class="card shadow-sm border-0 h-100">
+                            <img src="${job.image}" class="card-img-top object-fit-cover" style="height:200px;">
+                            <div class="card-body">
+                                <h5 class="text-primary">${job.title}</h5>
+                                <span class="badge bg-success mb-2">${job.type}</span>
+                                <p class="text-muted mb-1"><i class="bi bi-geo-alt"></i> ${job.location}</p>
+                                <hr>
+                                <p><strong>Requirements:</strong> ${job.requirements}</p>
+                                <p><strong>Salary:</strong> ${job.salary}$</p>
+                                <p class="text-danger"><strong>Deadline:</strong> ${new Date(job.deadline).toLocaleDateString()}</p>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <a href="mailto:${job.contactEmail}" class="btn btn-main w-100">Apply Now</a>
+                            </div>
                         </div>
-
-                        <div class="card-footer bg-white border-0">
-                            <a href="mailto:${job.contactEmail}" class="btn btn-main w-100">
-                                Apply Now
-                            </a>
-                        </div>
-                    </div>
                     </a>
                 </div>
             `;
         });
-
+        jobsContainer.innerHTML = html;
         buildPagination();
     }
 
-    // PAGINATION
+    // ===== PAGINATION =====
     function buildPagination() {
         pagination.innerHTML = '';
         const pages = Math.ceil(filteredJobs.length / perPage);
 
         for (let i = 1; i <= pages; i++) {
-            pagination.innerHTML += `
-                <li class="page-item ${i === currentPage ? 'active' : ''}">
-                    <a class="page-link btn btn-main m-1" href="#">${i}</a>
-                </li>
-            `;
+            const li = document.createElement('li');
+            li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+            li.innerHTML = `<a class="page-link btn btn-main m-1" href="#">${i}</a>`;
+            pagination.appendChild(li);
         }
 
         pagination.querySelectorAll('a').forEach((btn, index) => {
@@ -139,9 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // LIVE FILTER
-    [filterTitle, filterLocation, minSalary, maxSalary, filterCategory]
-        .forEach(el => el.addEventListener('input', applyFilter));
+    // ===== LIVE FILTER =====
+    [filterTitle, filterLocation, minSalary, maxSalary, filterCategory].forEach(el => el.addEventListener('input', applyFilter));
 
     fetchJobs();
 });

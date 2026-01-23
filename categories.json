@@ -8,5 +8,40 @@
     "id": 2,
     "name": "IT Support",
     "createdAt": "2026-01-22T10:46:08.518Z"
+  },
+  {
+    "id": 3,
+    "name": "IT Jobs",
+    "createdAt": "2026-01-23T17:13:37.872Z"
+  },
+  {
+    "id": 4,
+    "name": "Grapic Design",
+    "createdAt": "2026-01-23T17:14:07.445Z"
+  },
+  {
+    "id": 5,
+    "name": "Marketing Jobs",
+    "createdAt": "2026-01-23T17:35:55.765Z"
+  },
+  {
+    "id": 6,
+    "name": "asdfas",
+    "createdAt": "2026-01-23T17:52:40.928Z"
+  },
+  {
+    "id": 7,
+    "name": "Sale",
+    "createdAt": "2026-01-23T17:54:10.885Z"
+  },
+  {
+    "id": 8,
+    "name": "CO",
+    "createdAt": "2026-01-23T17:55:27.385Z"
+  },
+  {
+    "id": 9,
+    "name": "asd",
+    "createdAt": "2026-01-23T18:22:19.091Z"
   }
 ]

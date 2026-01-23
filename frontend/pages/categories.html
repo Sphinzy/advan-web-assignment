@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Manager</title>
+</head>
+
+<body>
+    <h2>Add New Category</h2>
+    <input type="text" id="newCategory" placeholder="Enter new category">
+    <button id="addCategoryBtn">Add Category</button>
+
+    <h2>Category Dropdown</h2>
+    <select id="filterCategory">
+        <option value="">-- Show All Categories --</option>
+    </select>
+
+    <script>
+        //const token = localStorage.getItem('token'); // replace with your actual token
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTE4NTk3NSwiZXhwIjoxNzY5NzkwNzc1fQ.oa4nYVM-e3lvVY8TGZ67ss4vpdCz9jXBS0TxpwNrQ9k'; // replace with your actual token
+        const newCatInput = document.getElementById('newCategory');
+        const addCatBtn = document.getElementById('addCategoryBtn');
+        const filterCategory = document.getElementById('filterCategory');
+
+        const apiBase = 'http://localhost:3000/api/categories'; // Node API endpoint
+
+        // ===== FETCH & POPULATE CATEGORIES =====
+        async function loadCategories() {
+            try {
+                const res = await fetch(apiBase, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                const data = await res.json();
+                const categories = data.data || [];
+
+                // Reset dropdown
+                filterCategory.innerHTML = `<option value="">-- Show All Categories --</option>`;
+                categories.forEach(cat => {
+                    const opt = document.createElement('option');
+                    opt.value = cat.id;
+                    opt.textContent = cat.name;
+                    filterCategory.appendChild(opt);
+                });
+            } catch (err) {
+                console.error("Failed to load categories:", err);
+            }
+        }
+
+        // Load categories on page load
+        loadCategories();
+
+        // ===== ADD NEW CATEGORY =====
+        addCatBtn.addEventListener('click', async () => {
+            const name = newCatInput.value.trim();
+            if (!name) return alert("Please enter a category name");
+
+            try {
+                const res = await fetch(apiBase, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ name })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.data) {
+                    alert("Category added: " + data.data.name);
+
+                    // Refresh the dropdown to include the new category
+                    loadCategories();
+
+                    // Clear input
+                    newCatInput.value = '';
+                } else {
+                    alert(data.message || "Failed to add category");
+                }
+
+            } catch (err) {
+                console.error(err);
+                alert("Server error");
+            }
+        });
+    </script>
+</body>
+
+</html>

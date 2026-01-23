@@ -20,12 +20,163 @@
 </head>
 
 <body>
-
+    <!-- ================= HEADER ================= -->
+    <header class="sticky-top " style="z-index: 5;">
+        <nav class="navbar fixed-top bg-secondary-subtle">
+            <div class="container">
+                <div>
+                    <img src="../../img/logo-team.png" id="logoImage" alt="">
+                    <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
+                </div>
+    
+                <!-- menu icon  -->
+                <button class="navbar-toggler d-flex d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- side bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div>
+                            <img src="../../img/logo-team.png" id="logoImage" alt="">
+                            <a class="navbar-brand fs-5 fw-bold text-main" href="#">JOBHUB</a>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item ps-3 rounded-2">
+                                <a href="../index.html" class="nav-link "><i class="bi bi-house-door-fill pe-1"></i>Home</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./jobs.html" class="nav-link text-main"><i
+                                        class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./blog.html" class="nav-link text-main active"><i
+                                        class="bi bi-newspaper pe-1"></i>Blog</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./about.html" class="nav-link text-main"><i
+                                        class="bi bi-info-circle-fill pe-1"></i>About</a>
+                            </li>
+                            <li class="nav-item ps-3">
+                                <a href="./contact.html" class="nav-link text-main"><i
+                                        class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                            </li>
+                        </ul>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+    
+                <!-- input search  -->
+                <div class="d-none d-lg-flex" style="width: 500px;">
+                    <ul class="navbar-nav d-flex flex-row justify-content-evenly w-100">
+                        <li class="nav-item ps-3 rounded-2">
+                            <a href="../index.html" class="nav-link "><i class="bi bi-house-door-fill pe-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./jobs.html" class="nav-link text-main"><i
+                                    class="bi bi-briefcase-fill pe-1"></i>Job</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./blog.html" class="nav-link text-main active"><i class="bi bi-newspaper pe-1"></i>Blog</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./about.html" class="nav-link text-main"><i
+                                    class="bi bi-info-circle-fill pe-1"></i>About</a>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <a href="./contact.html" class="nav-link text-main"><i
+                                    class="bi bi-envelope-fill pe-1"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="dropdown d-none d-lg-flex">
+                    <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div style="border: 2px solid var(--bs-main); border-radius: 50%; ">
+                            <img src="../assets/images/profile.png" class="img-fluid rounded-circle object-fit-cover"
+                                id="profile-image" style="width: 40px; height: 40px;" alt />
+                        </div>
+                    </a>
+    
+                    <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                        <li><a class='dropdown-item' href='../pages/profile.html'><i
+                                    class="bi bi-person-circle me-2"></i>Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                    class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-body">
+                    <h3 class="text-danger">Logout</h3>
+                    <p>Are you sure you want to logout?</p>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-outline-main" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-danger" id="btnLogout">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- REQUIRED CONTAINER -->
-    <div id="post-detail"></div>
+    <div class="pt-15 pb-10" id="post-detail"></div>
 
+
+    <footer class="bg-main text-white w-100 py-4" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/images/logoTeam.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <p class="mt-2">
+                        This platform provides career guidance, job information, scholarships, and opportunities
+                        JOBHUB to make informed decisions about their future.
+                    </p>
+                </div>
+    
+                <div class="col-6 col-lg-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/asset/page/us/about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="/asset/page/us/contact" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="/asset/page/direction/major" class="text-white text-decoration-none">Career
+                                Guidance</a></li>
+                        <li><a href="/asset/page/us/event" class="text-white text-decoration-none">Events</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-6 col-lg-4 mb-3">
+                    <h5>Contact</h5>
+                    <p>Email: <a href="mailto:jobhub@gmail.com" class="text-white">jobhub@gmail.com</a>
+                    </p>
+                    <p>Phone: <a href="tel:+11234567890" class="text-white">(+885) 456 7890</a></p>
+                </div>
+            </div>
+    
+            <hr class="bg-light" />
+            <div class="text-center">
+                &copy; 2025 FYC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
     <!-- JS MUST BE AT BOTTOM -->
     <script src="../assets/js/blogDetail.js"></script>
+    <script src="../assets/js/logout.js"></script>
 </body>
 
 </html>
