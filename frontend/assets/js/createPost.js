@@ -1,19 +1,20 @@
-const publishBtn = document.querySelector("#publishBtn");
+// ================= ELEMENTS =================
+const publishBtn = document.getElementById("publishBtn");
 const titleInput = document.getElementById("title");
-const imageInput = document.getElementById("image");
+const fileInput = document.getElementById("image");
 
 const titleError = document.getElementById("titleError");
 const contentError = document.getElementById("contentError");
 
-// Example: get token from localStorage
+// ================= TOKEN =================
 const token = localStorage.getItem("token");
-// const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTAwODMxNywiZXhwIjoxNzY5NjEzMTE3fQ.fKpCbu6bZYfrGr6Vauv7qEvb_AF93Xhf2bim1AeItHs';
 
+// ================= CREATE POST =================
 publishBtn.addEventListener("click", async () => {
     const title = titleInput.value.trim();
-    const content = quill.root.innerHTML.trim(); // Quill editor content
-    const image = imageInput.value.trim();
-    const categoryId = 1; // change if you use category select
+    const content = quill.root.innerHTML.trim();
+    const imageFile = fileInput.files[0];
+    const categoryId = 1;
 
     // Reset errors
     titleError.classList.add("d-none");
@@ -31,21 +32,28 @@ publishBtn.addEventListener("click", async () => {
         hasError = true;
     }
 
+    if (!imageFile) {
+        alert("Please select an image");
+        hasError = true;
+    }
+
     if (hasError) return;
+
+    // ================= FORMDATA =================
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("categoryId", categoryId);
+    formData.append("image", imageFile);
 
     try {
         const res = await fetch("http://localhost:3000/api/posts", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
+                // ❌ DO NOT SET Content-Type
             },
-            body: JSON.stringify({
-                title,
-                content,
-                categoryId,
-                image
-            })
+            body: formData
         });
 
         const data = await res.json();
@@ -67,10 +75,8 @@ publishBtn.addEventListener("click", async () => {
             window.location.href = "./blog.html";
         }
 
-        
-
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err);
         alert("Server error");
     }
 });

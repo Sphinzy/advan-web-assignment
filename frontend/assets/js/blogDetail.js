@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 <!-- Blog Image -->
                 <div class="position-relative">
-                    <img src="${post.image}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;">
+                    <img src="${post.imageUrl}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;">
                     <span class="badge text-dark fs-6 position-absolute bottom-0 start-0 m-3 px-3 py-2">
                         ${new Date(post.createdAt).toLocaleDateString()}
                     </span>

@@ -9,7 +9,7 @@ const salaryInput = document.getElementById("salary");
 const deadlineInput = document.getElementById("deadline");
 const categorySelect = document.getElementById("category");
 const contactInput = document.getElementById("contactEmail");
-const imageInput = document.getElementById("image"); // text input for URL
+const imageInput = document.getElementById("image"); // file input
 const requirementsInput = document.getElementById("requirements");
 const jobBtn = document.getElementById("jobBtn");
 
@@ -71,7 +71,7 @@ jobBtn.addEventListener('click', async (e) => {
     const contactEmail = contactInput.value.trim();
     const requirements = requirementsInput.value.trim();
     const description = quill.root.innerHTML.trim();
-    const image = imageInput.value.trim(); // URL string
+    const imageFile = imageInput.files[0];
 
     // ===== VALIDATION =====
     if (!title) return showError("title");
@@ -83,21 +83,20 @@ jobBtn.addEventListener('click', async (e) => {
     if (!requirements) return showError("requirements");
     if (!description || description === "<p><br></p>") return showError("description");
     if (!contactEmail) return showError("contact email");
-    if (!image) return showError("image URL");
+    if (!imageFile) return showError("image file");
 
-    // ===== JSON BODY =====
-    const body = {
-        title,
-        type,
-        location,
-        description,
-        requirements,
-        salary,
-        deadline,
-        contactEmail,
-        categoryId,
-        image
-    };
+    // ===== FORM DATA =====
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("type", type);
+    formData.append("location", location);
+    formData.append("salary", salary);
+    formData.append("deadline", deadline);
+    formData.append("categoryId", categoryId);
+    formData.append("contactEmail", contactEmail);
+    formData.append("requirements", requirements);
+    formData.append("description", description);
+    formData.append("image", imageFile);
 
     // ===== SEND TO BACKEND =====
     jobBtn.disabled = true;
@@ -107,10 +106,9 @@ jobBtn.addEventListener('click', async (e) => {
         const res = await fetch("http://localhost:3000/api/jobs", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${token}` // ✅ do NOT set Content-Type
             },
-            body: JSON.stringify(body)
+            body: formData
         });
 
         const data = await res.json();

@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="col-md-3 mb-3">
                     <a href="jobDetail.html?id=${job.id}" class="text-decoration-none text-dark">
                         <div class="card shadow-sm border-0 h-100">
-                            <img src="${job.image}" class="card-img-top object-fit-cover" style="height:200px;">
+                            <img src="${job.imageUrl}" class="card-img-top object-fit-cover" style="height:200px;">
                             <div class="card-body">
                                 <h5 class="text-primary">${job.title}</h5>
                                 <span class="badge bg-success mb-2">${job.type}</span>

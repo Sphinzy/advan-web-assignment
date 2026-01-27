@@ -571,5 +571,21 @@
     "categoryId": 1,
     "image": "https://www.pinterest.com/pin/23151385580111082/s",
     "createdAt": "2026-01-23T17:06:56.734Z"
+  },
+  {
+    "id": 45,
+    "title": "asdfasdawewe",
+    "type": "Part-time",
+    "location": "Komport",
+    "description": "<p>sdsdfsdfsgdf</p>",
+    "requirements": "Web",
+    "salary": "2122",
+    "deadline": "2026-01-31",
+    "contactEmail": "dme@mydomain.com",
+    "categoryId": 2,
+    "image": "image-1769530603024-950041882.png",
+    "authorId": 9,
+    "createdAt": "2026-01-27T16:16:43.026Z",
+    "updatedAt": null
   }
 ]

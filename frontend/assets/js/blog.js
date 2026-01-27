@@ -29,7 +29,7 @@ fetch(`${baseUrl}/api/posts`)
                             <div class="card shadow-sm border-0 h-100">
 
                                 <!-- Blog Image -->
-                                <img src="${itemsCard[i].image}"
+                                <img src="${itemsCard[i].imageUrl}"
                                     class="card-img-top object-fit-cover posts-image" style="height: 250px;" alt="Blog Image">
 
                                 <div class="card-body">

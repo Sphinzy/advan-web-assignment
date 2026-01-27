@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <!-- IMAGE -->
                     <div class="col-lg-4">
                         <div class="card border-0 shadow-sm">
-                            <img src="${job.image}" class="card-img object-fit-cover" style="height: 420px" alt="${job.title}">
+                            <img src="${job.imageUrl}" class="card-img object-fit-cover" style="height: 420px" alt="${job.title}">
                         </div>
                     </div>
 

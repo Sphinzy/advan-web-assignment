@@ -1,39 +1,27 @@
 {
   "info": {
-    "_postman_id": "postman-api-with-jobs",
-    "name": "Blog API with Jobs",
-    "description": "API collection including Users, Auth, Categories, Posts (with author & image), and Jobs (with image)",
+    "_postman_id": "blog-api-with-jobs-file-upload",
+    "name": "Blog API with Jobs (File Upload)",
+    "description": "REST API for Users, Auth, Categories, Posts, and Jobs with File Upload support",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "item": [
+  "variable": [
     {
-      "name": "Get API Info",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": "http://localhost:3000"
-      }
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
     },
     {
-      "name": "Users",
-      "item": [
-        {
-          "name": "Get All Users",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/users"
-          }
-        },
-        {
-          "name": "Get Single User",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/users/1"
-          }
-        }
-      ]
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}"
+      }
     },
     {
       "name": "Authentication",
@@ -50,9 +38,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Sphinx\",\n  \"lastName\": \"Destroy\",\n  \"email\": \"satsya001@gmail.com\",\n  \"password\": \"Test!123\"\n}"
+              "raw": "{\n  \"firstName\": \"Sphinx\",\n  \"lastName\": \"Destroy\",\n  \"email\": \"satsya001@gmail.com\",\n  \"password\": \"Test@123\"\n}"
             },
-            "url": "http://localhost:3000/api/auth/register"
+            "url": "{{baseUrl}}/api/auth/register"
           }
         },
         {
@@ -67,9 +55,40 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"satsya001@gmail.com\",\n  \"password\": \"Test!123\"\n}"
+              "raw": "{\n  \"email\": \"satsya001@gmail.com\",\n  \"password\": \"Test@123\"\n}"
             },
-            "url": "http://localhost:3000/api/auth/login"
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/users"
+          }
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/users/1"
           }
         }
       ]
@@ -81,16 +100,14 @@
           "name": "Get All Categories",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/categories"
+            "url": "{{baseUrl}}/api/categories"
           }
         },
         {
-          "name": "Get Single Category",
+          "name": "Get Category By ID",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/categories/1"
+            "url": "{{baseUrl}}/api/categories/1"
           }
         },
         {
@@ -111,7 +128,7 @@
               "mode": "raw",
               "raw": "{\n  \"name\": \"IT Jobs\"\n}"
             },
-            "url": "http://localhost:3000/api/categories"
+            "url": "{{baseUrl}}/api/categories"
           }
         },
         {
@@ -132,7 +149,7 @@
               "mode": "raw",
               "raw": "{\n  \"name\": \"Software Jobs\"\n}"
             },
-            "url": "http://localhost:3000/api/categories/1"
+            "url": "{{baseUrl}}/api/categories/1"
           }
         },
         {
@@ -145,7 +162,7 @@
                 "value": "Bearer {{token}}"
               }
             ],
-            "url": "http://localhost:3000/api/categories/1"
+            "url": "{{baseUrl}}/api/categories/1"
           }
         }
       ]
@@ -157,49 +174,101 @@
           "name": "Get All Posts",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/posts"
+            "url": "{{baseUrl}}/api/posts"
           }
         },
         {
           "name": "Get Post By ID",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/posts/1"
+            "url": "{{baseUrl}}/api/posts/1"
           }
         },
         {
           "name": "Get Posts By Author",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/posts/author/1"
+            "url": "{{baseUrl}}/api/posts/author/1"
           }
         },
         {
-          "name": "Create Post",
+          "name": "Create Post (with File Upload)",
           "request": {
             "method": "POST",
             "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
               {
                 "key": "Authorization",
                 "value": "Bearer {{token}}"
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": "{\n  \"title\": \"My First Blog Post\",\n  \"content\": \"This is the content of my first blog post\",\n  \"categoryId\": 1,\n  \"image\": \"https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg\"\n}"
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "My First Blog",
+                  "type": "text"
+                },
+                {
+                  "key": "content",
+                  "value": "This is blog content with image upload",
+                  "type": "text"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/path/to/your/image.jpg"
+                }
+              ]
             },
-            "url": "http://localhost:3000/api/posts"
+            "url": "{{baseUrl}}/api/posts"
           }
         },
         {
-          "name": "Update Post",
+          "name": "Update Post (with File Upload)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Updated Blog Title",
+                  "type": "text"
+                },
+                {
+                  "key": "content",
+                  "value": "Updated blog content with new image",
+                  "type": "text"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/path/to/your/new-image.jpg"
+                }
+              ]
+            },
+            "url": "{{baseUrl}}/api/posts/1"
+          }
+        },
+        {
+          "name": "Update Post (without File Upload)",
           "request": {
             "method": "PUT",
             "header": [
@@ -214,9 +283,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Updated Blog Title\",\n  \"content\": \"Updated blog content\",\n  \"categoryId\": 1\n}"
+              "raw": "{\n  \"title\": \"Updated Blog Title Only\",\n  \"content\": \"Updated content without changing image\"\n}"
             },
-            "url": "http://localhost:3000/api/posts/1"
+            "url": "{{baseUrl}}/api/posts/1"
           }
         },
         {
@@ -229,7 +298,7 @@
                 "value": "Bearer {{token}}"
               }
             ],
-            "url": "http://localhost:3000/api/posts/1"
+            "url": "{{baseUrl}}/api/posts/1"
           }
         }
       ]
@@ -241,30 +310,128 @@
           "name": "Get All Jobs",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/jobs"
+            "url": "{{baseUrl}}/api/jobs"
           }
         },
         {
           "name": "Get Job By ID",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/jobs/1"
+            "url": "{{baseUrl}}/api/jobs/1"
           }
         },
         {
           "name": "Get Jobs By Author",
           "request": {
             "method": "GET",
-            "header": [],
-            "url": "http://localhost:3000/api/jobs/author/1"
+            "url": "{{baseUrl}}/api/jobs/author/1"
           }
         },
         {
-          "name": "Create Job",
+          "name": "Create Job (with File Upload)",
           "request": {
             "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Frontend Developer",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "Full-time",
+                  "type": "text"
+                },
+                {
+                  "key": "location",
+                  "value": "Phnom Penh",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Build UI components and features",
+                  "type": "text"
+                },
+                {
+                  "key": "requirements",
+                  "value": "HTML, CSS, JavaScript, React",
+                  "type": "text"
+                },
+                {
+                  "key": "salary",
+                  "value": "500$",
+                  "type": "text"
+                },
+                {
+                  "key": "deadline",
+                  "value": "2026-02-28",
+                  "type": "text"
+                },
+                {
+                  "key": "contactEmail",
+                  "value": "hr@example.com",
+                  "type": "text"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/path/to/your/company-logo.jpg"
+                }
+              ]
+            },
+            "url": "{{baseUrl}}/api/jobs"
+          }
+        },
+        {
+          "name": "Update Job (with File Upload)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Senior Frontend Developer",
+                  "type": "text"
+                },
+                {
+                  "key": "salary",
+                  "value": "800$",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/path/to/your/new-logo.jpg"
+                }
+              ]
+            },
+            "url": "{{baseUrl}}/api/jobs/1"
+          }
+        },
+        {
+          "name": "Update Job (without File Upload)",
+          "request": {
+            "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
@@ -277,9 +444,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Frontend Developer\",\n  \"type\": \"Full-time\",\n  \"location\": \"Phnom Penh\",\n  \"description\": \"Build amazing UI\",\n  \"requirements\": \"HTML, CSS, JS\",\n  \"salary\": \"500$\",\n  \"deadline\": \"2026-02-28\",\n  \"contactEmail\": \"hr@example.com\",\n  \"categoryId\": 1\n}"
+              "raw": "{\n  \"title\": \"Senior Frontend Developer\",\n  \"salary\": \"800$\",\n  \"description\": \"Build UI with React and TypeScript\"\n}"
             },
-            "url": "http://localhost:3000/api/jobs"
+            "url": "{{baseUrl}}/api/jobs/1"
           }
         },
         {
@@ -292,10 +459,38 @@
                 "value": "Bearer {{token}}"
               }
             ],
-            "url": "http://localhost:3000/api/jobs/1"
+            "url": "{{baseUrl}}/api/jobs/1"
           }
         }
       ]
+    },
+    {
+      "name": "Test Upload Endpoint",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "test",
+              "value": "value",
+              "type": "text"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": "{{baseUrl}}/api/posts"
+      }
     }
   ]
 }

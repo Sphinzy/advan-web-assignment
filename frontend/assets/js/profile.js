@@ -128,8 +128,9 @@ async function Render() {
         jobsContainer.innerHTML = userJobs.length
             ? userJobs.map(job => `
                 <div class="col-6">
+                    <a href="jobDetail.html?id=${job.id}" class="text-decoration-none text-dark">
                     <div class="card shadow-sm">
-                        <img src="${job.image}" class="card-img-top" style="height:200px;object-fit:cover">
+                        <img src="${job.imageUrl}" class="card-img-top" style="height:200px;object-fit:cover">
                         <div class="card-body">
                             <h6 class="card-title">${job.title}</h6>
                             <button class="btn btn-sm btn-danger"
@@ -138,6 +139,7 @@ async function Render() {
                             </button>
                         </div>
                     </div>
+                    </a>
                 </div>
             `).join('')
             : `<p class="text-center text-muted">No jobs yet</p>`;
@@ -151,8 +153,10 @@ async function Render() {
         blogsContainer.innerHTML = userBlogs.length
             ? userBlogs.map(post => `
                 <div class="col-6">
-                    <div class="card shadow-sm">
-                        <img src="${post.image}" class="card-img-top" style="height:200px;object-fit:cover">
+                <div class="card shadow-sm">
+                <a href="blogDetail.html?id=${post.id}" class="text-decoration-none text-dark">
+                        <img src="${post.imageUrl}" class="card-img-top" style="height:200px;object-fit:cover">
+                        </a>
                         <div class="card-body">
                             <h6 class="card-title">${post.title}</h6>
                             <button class="btn btn-sm btn-warning me-1"
