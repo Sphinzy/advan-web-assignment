@@ -1,3 +1,6 @@
+// const token = localStorage.getItem("token");
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTQ0MDI5OSwiZXhwIjoxNzcwMDQ1MDk5fQ.gZv_y0Op0cICMOa1_MkqHPuD8Cs6CSG6OyDk6pSa4Cg';
+
 // user
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -141,7 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${new Date(job.createdAt).toLocaleDateString()}</td>
                     <td>
                         <button class="btn btn-sm btn-warning edit-job"><i class="bi bi-pencil"></i></button>
-                        <button class="btn btn-sm btn-danger delete-job"><i class="bi bi-trash"></i></button>
+                        <button class="btn btn-sm btn-danger delete-job">
+    <i class="bi bi-trash"></i>
+</button>
+
                     </td>
                 </tr>
             `).join("");
@@ -156,24 +162,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Delete Job
+    async function deleteJob(id, row) {
+        if (!confirm("Delete this job?")) return;
+
+        try {
+            const res = await fetch(`${apiUrl}/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (!res.ok) throw new Error("Delete failed");
+            row.remove();
+
+        } catch (err) {
+            console.error(err);
+            alert("Delete failed or unauthorized");
+        }
+    }
+
     function attachDelete() {
         document.querySelectorAll(`#${tableId} .delete-job`).forEach(btn => {
-            btn.addEventListener("click", async (e) => {
-                const row = e.target.closest("tr");
+            btn.addEventListener("click", (e) => {
+                const row = e.currentTarget.closest("tr");
                 const id = row.dataset.id;
-                if (!confirm("Delete this job?")) return;
 
-                try {
-                    const res = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
-                    if (!res.ok) throw new Error("Failed to delete job");
-                    row.remove();
-                } catch (error) {
-                    console.error(error);
-                    alert("Failed to delete job!");
-                }
+                deleteJob(id, row); // 👈 parameter
             });
         });
     }
+
+
 
     // Edit Job
     function attachEdit() {
@@ -298,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!confirm("Delete this category?")) return;
 
                 try {
-                    const res = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+                    const res = await fetch(`${apiUrl}/${id}`, { method: "DELETE", headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${token}` }, });
                     if (!res.ok) throw new Error("Failed to delete category");
                     row.remove();
                 } catch (error) {
@@ -323,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 try {
                     const res = await fetch(`${apiUrl}/${id}`, {
                         method: "PUT",
-                        headers: { "Content-Type": "application/json" },
+                        headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${token}` },
                         body: JSON.stringify({ name: newName })
                     });
                     if (!res.ok) throw new Error("Failed to update category");
@@ -344,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const res = await fetch(apiUrl, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json", 'Authorization' : `Bearer ${token}` },
                 body: JSON.stringify({ name })
             });
             if (!res.ok) throw new Error("Failed to add category");

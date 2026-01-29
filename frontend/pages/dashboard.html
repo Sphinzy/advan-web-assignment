@@ -37,6 +37,255 @@
             </div>
         </div>
     </div>
+
+    <section>
+        <!-- Register Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        
+                    <div class="row g-0">
+        
+                        <!-- Form -->
+                        <div class="col-12 p-4">
+                            <div class="modal-header border-0 p-0 mb-3">
+                                <h3 class="fw-bold">Register</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+        
+                            <p class="text-muted mb-3">Create your account in one minute</p>
+        
+                            <form id="registerForm">
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <input type="text" id="fname" class="form-control" placeholder="First Name">
+                                        <small id="errfname" class="text-danger"></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="lname" class="form-control" placeholder="Last Name">
+                                        <small id="errlname" class="text-danger"></small>
+                                    </div>
+                                </div>
+        
+                                <div class="mt-3">
+                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                    <small id="erremail" class="text-danger"></small>
+                                </div>
+        
+                                <div class="mt-3 position-relative">
+                                    <input type="password" id="password" class="form-control" placeholder="Password">
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3">
+                                        <i class="bi bi-eye-slash"></i>
+                                    </span>
+                                    <small id="errpassword" class="text-danger"></small>
+                                </div>
+        
+                                <div class="mt-3 position-relative">
+                                    <input type="password" id="cpassword" class="form-control" placeholder="Confirm Password">
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3">
+                                        <i class="bi bi-eye-slash"></i>
+                                    </span>
+                                    <small id="errcpassword" class="text-danger"></small>
+                                </div>
+        
+                                <button type="button" class="btn btn-main w-100 mt-4" onclick="signup()">
+                                    Register
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Job Announcement Modal -->
+        <div class="modal fade" id="jobModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+        
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <div>
+                            <h4 class="fw-bold mb-0" style="color: var(--bs-main);">
+                                Create Jobs Announcement
+                            </h4>
+                            <small class="text-muted">
+                                Fill in the details below to publish a new job
+                            </small>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+        
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <div class="row g-3">
+        
+                            <!-- Title -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Title *</label>
+                                <input type="text" class="form-control" placeholder="Title of content">
+                                <small class="text-danger d-none">Title cannot be empty</small>
+                            </div>
+        
+                            <!-- Job Type -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Job Type *</label>
+                                <select class="form-select">
+                                    <option selected disabled>Select type</option>
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                    <option>Internship</option>
+                                    <option>Remote</option>
+                                </select>
+                                <small class="text-danger d-none">Job type is required</small>
+                            </div>
+        
+                            <!-- Location -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Location *</label>
+                                <input type="text" class="form-control" placeholder="Location">
+                                <small class="text-danger d-none">Location is required</small>
+                            </div>
+        
+                            <!-- Salary -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Salary *</label>
+                                <input type="text" class="form-control" placeholder="Salary">
+                            </div>
+        
+                            <!-- Requirements -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Requirements *</label>
+                                <input type="text" class="form-control" placeholder="Requirements">
+                            </div>
+        
+                            <!-- Contact Email -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Contact Email *</label>
+                                <input type="email" class="form-control" placeholder="example@email.com">
+                            </div>
+        
+                            <!-- Deadline -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Deadline *</label>
+                                <input type="date" class="form-control">
+                            </div>
+        
+                            <!-- Category -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Category *</label>
+                                <select class="form-select">
+                                    <option selected disabled>Select category</option>
+                                </select>
+                            </div>
+        
+                            <!-- Image -->
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold">Image *</label>
+                                <input type="file" class="form-control" accept="image/*">
+                            </div>
+        
+                            <!-- Content -->
+                            <div class="col-12 mt-3">
+                                <label class="form-label fw-semibold">Content *</label>
+                                <div class="border rounded p-2">
+                                    <div id="editor" style="min-height: 200px;"></div>
+                                </div>
+                                <small class="text-danger d-none">Content cannot be empty</small>
+                            </div>
+        
+                        </div>
+                    </div>
+        
+                    <!-- Footer -->
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button class="btn text-light px-4" style="background-color: var(--bs-main);">
+                            Publish Job
+                        </button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Modal -->
+        <div class="modal fade" id="blogModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+        
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" style="color: var(--bs-main);">
+                            Create Blog Post
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+        
+                    <!-- Modal Body -->
+                    <div class="modal-body p-0">
+        
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12">
+        
+                                <main class="card shadow-sm border">
+                                    <div class="card-body p-4">
+        
+                                        <div class="row g-3">
+                                            <!-- Title -->
+                                            <div class="col-6 mb-4">
+                                                <label class="form-label fw-semibold">Title *</label>
+                                                <input type="text" id="title" name="title" class="form-control"
+                                                    placeholder="Title of content">
+                                                <div id="titleError" class="text-danger small mt-1 d-none">
+                                                    Title cannot be empty
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-semibold">Image *</label>
+                                                <input type="file" id="image" class="form-control"
+                                                    accept="image/png, image/jpeg, image/jpg">
+                                            </div>
+                                        </div>
+        
+                                        <!-- Content -->
+                                        <div class="col-12 mt-3">
+                                            <label class="form-label fw-semibold">Content *</label>
+                                            <div class="border rounded p-2">
+                                                <div id="editor" style="min-height: 200px;"></div>
+                                            </div>
+                                            <small class="text-danger d-none">Content cannot be empty</small>
+                                        </div>
+        
+                                        <div class="d-flex justify-content-end align-items-center mt-4 pt-3 border-top">
+                                            <button type="button" data-bs-toggle="modal" id="publishBtn"
+                                                class="btn px-4 publish-btn text-light"
+                                                style="background-color: var(--bs-main);">
+                                                Publish
+                                            </button>
+                                        </div>
+        
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
     <main class="d-flex">
 
         <!-- Sidebar -->
@@ -74,7 +323,7 @@
             <!-- Users Tab -->
             <div class="tab-pane fade show active overflow-x-auto" style="height: 95vh;" id="usersTab" role="tabpanel">
                 <h3 class="text-main pt-5 pb-3">Users</h3>
-                <button class="btn btn-main mb-2" id="addUserBtn">Add User</button>
+                <button class="btn btn-main mb-2" data-bs-toggle="modal" data-bs-target="#registerModal">Add User</button>
                 <table class="table table-striped" id="usersTable">
                     <thead>
                         <tr>
@@ -92,7 +341,7 @@
             <!-- Jobs Tab -->
             <div class="tab-pane fade overflow-x-auto" style="height: 95vh;" id="jobsTab" role="tabpanel">
                 <h3 class="text-main pt-5 pb-3">Jobs</h3>
-                <button class="btn btn-main mb-2" id="addJobBtn">Add Job</button>
+                <button class="btn btn-main mb-2" data-bs-toggle="modal" data-bs-target="#jobModal">Add Job</button>
                 <table class="table table-striped" id="jobsTable">
                     <thead>
                         <tr>
@@ -129,7 +378,7 @@
             <!-- Posts Tab -->
             <div class="tab-pane fade overflow-x-auto" style="height: 95vh;" id="postsTab" role="tabpanel">
                 <h3 class="text-main pt-5 pb-3">Posts</h3>
-                <button class="btn btn-main mb-2" id="addPostBtn">Add Post</button>
+                <button class="btn btn-main mb-2" data-bs-toggle="modal" data-bs-target="#blogModal">Add Post</button>
                 <table class="table table-striped" id="postsTable">
                     <thead>
                         <tr>
@@ -149,6 +398,9 @@
 
     <script src="../assets/js/dashboard.js"></script>
     <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/register.js"></script>
+    <!-- <script src="../assets/js/createJob.js"></script>
+    <script src="../assets/js/createPost.js"></script> -->
     <script src="../assets/bootstrap-5.3.7/js/bootstrap.bundle.min.js"></script>
 </body>
 

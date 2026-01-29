@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showToast("Welcome Admin!", "success");
 
             localStorage.setItem("role", "admin");
-            localStorage.setItem("token", "admin-token");
+            localStorage.setItem("token", 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTc2OTQ0MDI5OSwiZXhwIjoxNzcwMDQ1MDk5fQ.gZv_y0Op0cICMOa1_MkqHPuD8Cs6CSG6OyDk6pSa4Cg');
 
             setTimeout(() => {
                 window.location.href = "../pages/dashboard.html";

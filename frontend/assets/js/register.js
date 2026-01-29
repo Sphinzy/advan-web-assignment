@@ -82,7 +82,7 @@ function signup() {
             if (data.result) {
                 showToast("Registered successfully!", "success");
                 setTimeout(() => {
-                    window.location.replace("../pages/login.html");
+                    window.location.href = "../pages/login.html";
                 }, 1000);
             } else {
                 showToast("Registration failed: " + (data.message || "Unknown error"), "error");

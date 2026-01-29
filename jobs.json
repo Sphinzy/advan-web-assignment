@@ -11,7 +11,7 @@
     "contactEmail": "hr@example.com",
     "categoryId": null,
     "createdAt": "2026-01-16T15:45:04.744Z",
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg"
+    "image": "default.jpg"
   },
   {
     "id": 3,
@@ -23,7 +23,7 @@
     "salary": "500 ",
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-16T15:53:20.889Z"
   },
   {
@@ -37,7 +37,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-17T18:41:30.163Z"
   },
   {
@@ -51,7 +51,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T15:02:31.984Z"
   },
   {
@@ -65,7 +65,7 @@
     "deadline": "2026-01-29",
     "contactEmail": "me@mydomain.com",
     "categoryId": null,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:31:48.889Z"
   },
   {
@@ -79,7 +79,7 @@
     "deadline": "2026-01-29",
     "contactEmail": "me@mydomain.com",
     "categoryId": null,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:35:19.624Z"
   },
   {
@@ -93,7 +93,7 @@
     "deadline": "2026-01-16",
     "contactEmail": "me@mydomain.com",
     "categoryId": null,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:39:47.241Z"
   },
   {
@@ -107,7 +107,7 @@
     "deadline": "2026-01-21",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:44:52.084Z"
   },
   {
@@ -121,7 +121,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:45:06.921Z"
   },
   {
@@ -135,7 +135,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:45:19.805Z"
   },
   {
@@ -149,7 +149,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:45:36.465Z"
   },
   {
@@ -163,7 +163,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:49:05.905Z"
   },
   {
@@ -177,7 +177,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:51:36.050Z"
   },
   {
@@ -191,7 +191,7 @@
     "deadline": "2026-01-22",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T16:54:54.704Z"
   },
   {
@@ -205,7 +205,7 @@
     "deadline": "2026-01-16",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T17:05:02.945Z"
   },
   {
@@ -219,7 +219,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-20T17:11:52.455Z"
   },
   {
@@ -233,7 +233,7 @@
     "deadline": "2026-01-30",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "image": "default.jpg",
     "createdAt": "2026-01-21T14:58:04.354Z"
   },
   {
@@ -247,7 +247,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-21T16:20:11.000Z"
   },
   {
@@ -261,7 +261,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-21T16:20:13.349Z"
   },
   {
@@ -275,7 +275,7 @@
     "deadline": "2026-02-28",
     "contactEmail": "hr@example.com",
     "categoryId": 1,
-    "image": "https://t4.ftcdn.net/jpg/16/79/44/21/360_F_1679442196_OEsi0AFKie6hYMBpvmXwwRgRYGV4U6Lz.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-21T16:20:53.222Z"
   },
   {
@@ -289,7 +289,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T16:42:09.101Z"
   },
   {
@@ -303,7 +303,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T17:01:07.574Z"
   },
   {
@@ -317,7 +317,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T17:25:45.102Z"
   },
   {
@@ -331,7 +331,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T17:28:30.636Z"
   },
   {
@@ -345,7 +345,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T17:34:35.236Z"
   },
   {
@@ -359,7 +359,7 @@
     "deadline": "2026-01-23",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T17:38:39.818Z"
   },
   {
@@ -373,7 +373,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T17:51:17.897Z"
   },
   {
@@ -387,7 +387,7 @@
     "deadline": "2026-01-30",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T17:52:37.430Z"
   },
   {
@@ -401,7 +401,7 @@
     "deadline": "2026-01-30",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T17:56:03.051Z"
   },
   {
@@ -415,7 +415,7 @@
     "deadline": "2026-01-20",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T18:04:18.954Z"
   },
   {
@@ -429,7 +429,7 @@
     "deadline": "2026-02-06",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T18:05:37.813Z"
   },
   {
@@ -443,7 +443,7 @@
     "deadline": "2026-01-14",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T18:14:22.704Z"
   },
   {
@@ -457,7 +457,7 @@
     "deadline": "2026-01-31",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T18:38:01.251Z"
   },
   {
@@ -471,7 +471,7 @@
     "deadline": "2026-02-07",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T18:42:32.184Z"
   },
   {
@@ -485,7 +485,7 @@
     "deadline": "2026-01-17",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T19:54:46.235Z"
   },
   {
@@ -499,7 +499,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-22T19:55:54.978Z"
   },
   {
@@ -513,7 +513,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-22T19:56:50.699Z"
   },
   {
@@ -527,7 +527,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-23T10:49:45.272Z"
   },
   {
@@ -541,7 +541,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://i.pinimg.com/736x/10/94/98/109498693007fe4316bcc3599dad2269.jpg",
+    "image": "default.jpg",
     "createdAt": "2026-01-23T10:50:47.126Z"
   },
   {
@@ -555,7 +555,7 @@
     "deadline": "2026-01-24",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/",
+    "image": "image-1769530603024-950041882.png",
     "createdAt": "2026-01-23T16:31:30.159Z"
   },
   {
@@ -569,7 +569,7 @@
     "deadline": "2026-01-29",
     "contactEmail": "me@mydomain.com",
     "categoryId": 1,
-    "image": "https://www.pinterest.com/pin/23151385580111082/s",
+    "image": "default.jpg",
     "createdAt": "2026-01-23T17:06:56.734Z"
   },
   {
@@ -586,6 +586,22 @@
     "image": "image-1769530603024-950041882.png",
     "authorId": 9,
     "createdAt": "2026-01-27T16:16:43.026Z",
+    "updatedAt": null
+  },
+  {
+    "id": 46,
+    "title": "sorse",
+    "type": "Full-time",
+    "location": "phnom penh",
+    "description": "<p>please this very im</p><ul><li>ddd</li><li>d</li></ul><p>ddd</p>",
+    "requirements": "App",
+    "salary": "1200",
+    "deadline": "2026-02-07",
+    "contactEmail": "papilo@gmail.com",
+    "categoryId": 3,
+    "image": "image-1769687581627-817951759.jpg",
+    "authorId": 17,
+    "createdAt": "2026-01-29T11:53:01.631Z",
     "updatedAt": null
   }
 ]
