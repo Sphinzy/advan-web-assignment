@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>
                         <button class="btn btn-sm btn-warning edit-job"><i class="bi bi-pencil"></i></button>
                         <button class="btn btn-sm btn-danger delete-job">
-    <i class="bi bi-trash"></i>
-</button>
+                            <i class="bi bi-trash"></i>
+                        </button>
 
                     </td>
                 </tr>

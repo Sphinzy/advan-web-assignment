@@ -76,17 +76,29 @@ async function btnSavePost(postId) {
 
     const title = document.getElementById('update-title').value.trim();
     const content = document.getElementById('update-content').value.trim();
+    const imageFile = document.getElementById('image').files[0];
 
-    if (!title || !content) return alert('Title & content required');
+    if (!title || !content) {
+        return alert('Title & content required');
+    }
+
+    // 🔥 Use FormData instead of JSON
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+
+    // only append image if user selected one
+    if (imageFile) {
+        formData.append('image', imageFile);
+    }
 
     try {
         const res = await fetch(`${baseUrl}/api/posts/${postId}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}` // ❗ no Content-Type
             },
-            body: JSON.stringify({ title, content })
+            body: formData
         });
 
         if (!res.ok) throw new Error('Update failed');
@@ -104,6 +116,7 @@ async function btnSavePost(postId) {
         alert('Error updating post');
     }
 }
+
 
 // ================= RENDER FUNCTION =================
 async function Render() {

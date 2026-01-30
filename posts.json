@@ -55,13 +55,13 @@
   },
   {
     "id": 7,
-    "title": "My First Blog Postrewtew",
+    "title": "My First Blog Postrewtewsss",
     "content": "This is the content oasdff my first blog post",
-    "image": "default.jpg",
+    "image": "image-1769704713664-10659862.jpg",
     "categoryId": 1,
     "authorId": 9,
     "createdAt": "2026-01-19T22:24:53.754Z",
-    "updatedAt": "2026-01-29T07:30:44.019Z"
+    "updatedAt": "2026-01-29T16:38:33.668Z"
   },
   {
     "id": 8,
@@ -84,11 +84,12 @@
   {
     "id": 10,
     "title": "My First Blog",
-    "content": "This is blog content with image upload",
-    "image": "image-1769440334616-337109972.jpg",
+    "content": "This is blog content with image uwpload",
+    "image": "image-1769704722344-413922310.jpg",
     "categoryId": "1",
     "authorId": 9,
-    "createdAt": "2026-01-26T15:12:14.619Z"
+    "createdAt": "2026-01-26T15:12:14.619Z",
+    "updatedAt": "2026-01-29T16:38:42.348Z"
   },
   {
     "id": 11,
